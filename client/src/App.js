@@ -10,14 +10,14 @@ import {
   MDBNavbarNav,
   MDBNavItem,
   MDBNavLink,
+  MDBIcon,
 } from "mdbreact";
+
 function App() {
   return (
     <Router>
-      <MDBNavbar color="indigo" dark expand="md">
-        <MDBNavbarBrand>
-          <strong className="white-text">Navbar</strong>
-        </MDBNavbarBrand>
+      <MDBNavbar color="black" dark expand="md">
+        <MDBNavbarBrand>WILDCARD</MDBNavbarBrand>
         <MDBNavbarNav left>
           <MDBNavItem active>
             <MDBNavLink to="/">Home</MDBNavLink>
@@ -26,7 +26,10 @@ function App() {
             <MDBNavLink to="/login">Login</MDBNavLink>
           </MDBNavItem>
           <MDBNavItem>
-            <MDBNavLink to="/signup">Signup</MDBNavLink>
+            <MDBNavLink to="/signup">Sign Up</MDBNavLink>
+          </MDBNavItem>
+          <MDBNavItem>
+            <MDBNavLink to="/members">Members</MDBNavLink>
           </MDBNavItem>
         </MDBNavbarNav>
       </MDBNavbar>
