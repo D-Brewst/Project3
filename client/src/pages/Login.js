@@ -1,25 +1,16 @@
 import React from "react";
-import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from "mdbreact";
+import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from "mdbreact";
 
-const Login = () => {
+const FormPage = () => {
   return (
     <MDBContainer>
       <MDBRow>
         <MDBCol md="6">
           <form>
-            <p className="h5 text-center mb-4">Sign up</p>
+            <p className="h5 text-center mb-4">Sign in</p>
             <div className="grey-text">
               <MDBInput
-                label="Your name"
-                icon="user"
-                group
-                type="text"
-                validate
-                error="wrong"
-                success="right"
-              />
-              <MDBInput
-                label="Your email"
+                label="Type your email"
                 icon="envelope"
                 group
                 type="email"
@@ -28,16 +19,7 @@ const Login = () => {
                 success="right"
               />
               <MDBInput
-                label="Confirm your email"
-                icon="exclamation-triangle"
-                group
-                type="text"
-                validate
-                error="wrong"
-                success="right"
-              />
-              <MDBInput
-                label="Your password"
+                label="Type your password"
                 icon="lock"
                 group
                 type="password"
@@ -45,7 +27,7 @@ const Login = () => {
               />
             </div>
             <div className="text-center">
-              <MDBBtn color="primary">Register</MDBBtn>
+              <MDBBtn>Login</MDBBtn>
             </div>
           </form>
         </MDBCol>
@@ -54,4 +36,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default FormPage;
