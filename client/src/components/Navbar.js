@@ -9,16 +9,13 @@ import {
   MDBCollapse,
 } from "mdbreact";
 import { BrowserRouter as Router } from "react-router-dom";
-
 class Navbar extends Component {
   state = {
     isOpen: false,
   };
-
   toggleCollapse = () => {
     this.setState({ isOpen: !this.state.isOpen });
   };
-
   render() {
     return (
       <Router>
@@ -45,5 +42,4 @@ class Navbar extends Component {
     );
   }
 }
-
 export default Navbar;
