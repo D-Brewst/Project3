@@ -1,10 +1,9 @@
 import React from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from "mdbreact";
-
-const FormPage = () => {
+const Signup = () => {
   return (
-    <MDBContainer>
-      <MDBRow>
+    <MDBContainer className="mt-5 justify-content-center">
+      <MDBRow className="justify-content-center">
         <MDBCol md="6">
           <form>
             <p className="h5 text-center mb-4">Sign up</p>
@@ -53,5 +52,4 @@ const FormPage = () => {
     </MDBContainer>
   );
 };
-
-export default FormPage;
+export default Signup;

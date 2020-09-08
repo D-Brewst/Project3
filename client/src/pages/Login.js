@@ -1,13 +1,13 @@
 import React from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from "mdbreact";
-
-const FormPage = () => {
+import Navbar from "../components/Navbar";
+const Login = () => {
   return (
-    <MDBContainer>
-      <MDBRow>
+    <MDBContainer className="mt-5 justify-content-center">
+      <MDBRow className="justify-content-center">
         <MDBCol md="6">
           <form>
-            <p className="h5 text-center mb-4">Sign in</p>
+            <p className="h5 text-center mb-4">Login</p>
             <div className="grey-text">
               <MDBInput
                 label="Type your email"
@@ -35,5 +35,4 @@ const FormPage = () => {
     </MDBContainer>
   );
 };
-
-export default FormPage;
+export default Login;

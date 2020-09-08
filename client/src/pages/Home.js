@@ -1,14 +1,6 @@
 import React from "react";
-import NavBar from "../components/Navbar";
-import Jumbotron from "../components/Jumbotron";
-
+import Navbar from "../components/Navbar";
 function Home() {
-    return (
-        <div>
-            <NavBar />
-            <Jumbotron />
-        </div>
-    )
+  return <div>hello</div>;
 }
-
 export default Home;
