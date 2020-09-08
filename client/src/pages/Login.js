@@ -1,6 +1,5 @@
 import React from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from "mdbreact";
-import Navbar from "../components/Navbar";
 
 const Login = () => {
   return (

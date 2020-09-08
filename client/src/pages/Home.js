@@ -1,8 +1,8 @@
 import React from "react";
-import Navbar from "../components/Navbar";
+import Card from "../components/Card";
 
 function Home() {
-  return <div>hello</div>;
+  return <h1>HELLO</h1>;
 }
 
 export default Home;
