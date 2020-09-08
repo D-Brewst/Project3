@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const PORT = process.env.PORT || 4000;
-// const router = require("./routes");
+// const routes = require("./routes");
 const app = express();
 
 // Configure body parsing for AJAX requests
@@ -11,7 +11,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-// app.use("/", router);
+// app.use("/", routes);
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/card", {
