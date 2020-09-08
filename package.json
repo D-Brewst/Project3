@@ -1,26 +1,26 @@
 {
-    "name": "project3",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "install": "cd client && npm install",
-        "start": "node server.js",
-        "start-dev": "concurrently \"nodemon server.js\" \"cd client && npm start\"",
-        "build": "cd client && npm run build",
-        "heroku-postbuild": "npm run build"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "axios": "^0.20.0",
-        "express": "^4.17.1",
-        "mongoose": "^5.10.3"
-    },
-    "devDependencies": {
-        "concurrently": "^5.3.0",
-        "nodemon": "^2.0.4"
-    }
+  "name": "project3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "cd client && npm install",
+    "start": "node server.js",
+    "start-dev": "concurrently \"nodemon server.js\" \"cd client && npm start\"",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.3"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.4"
+  }
 }
