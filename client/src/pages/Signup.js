@@ -1,6 +1,5 @@
 import React from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from "mdbreact";
-
 const Signup = () => {
   return (
     <MDBContainer className="mt-5 justify-content-center">
@@ -53,5 +52,4 @@ const Signup = () => {
     </MDBContainer>
   );
 };
-
 export default Signup;
