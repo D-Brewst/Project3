@@ -1,7 +1,9 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const routes = require("./routes");
+const passport = require("./authentication/passport");
+
 const PORT = process.env.PORT || 4000;
-// const router = require("./routes");
 const app = express();
 
 // Configure body parsing for AJAX requests
@@ -11,7 +13,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-// app.use("/", router);
+app.use("/", routes);
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/card", {
@@ -19,11 +21,11 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/card", {
   useNewUrlParser: true,
 });
 
-app.get("/api/welcome", (req, res) => {
-  res.json({
-    message: "Welcome to a Full Stack App",
-  });
-});
+// app.get("/api/welcome", (req, res) => {
+//   res.json({
+//     message: "Welcome to a Full Stack App",
+//   });
+// });
 
 app.listen(PORT, () => {
   console.log(`Your server is running on http://localhost:${PORT}`);
