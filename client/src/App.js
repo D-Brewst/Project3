@@ -4,26 +4,39 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Members from "./pages/Members";
 import Signup from "./pages/Signup";
-
+import {
+  MDBNavbar,
+  MDBNavbarBrand,
+  MDBNavbarNav,
+  MDBNavItem,
+  MDBNavLink,
+} from "mdbreact";
 function App() {
   return (
     <Router>
-      <div>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/Login" component={Login} />
-          <Route exact path="/" component={Signup} />
-          <Route exact path="/members" component={Members} />
-        </Switch>
-      </div>
+      <MDBNavbar color="indigo" dark expand="md">
+        <MDBNavbarBrand>
+          <strong className="white-text">Navbar</strong>
+        </MDBNavbarBrand>
+        <MDBNavbarNav left>
+          <MDBNavItem active>
+            <MDBNavLink to="/">Home</MDBNavLink>
+          </MDBNavItem>
+          <MDBNavItem>
+            <MDBNavLink to="/login">Login</MDBNavLink>
+          </MDBNavItem>
+          <MDBNavItem>
+            <MDBNavLink to="/signup">Signup</MDBNavLink>
+          </MDBNavItem>
+        </MDBNavbarNav>
+      </MDBNavbar>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/signup" component={Signup} />
+        <Route exact path="/members" component={Members} />
+      </Switch>
     </Router>
   );
 }
-
-// React.useEffect(() => {
-//   axios
-//     .get("https://api.inferkit.com/v1/models/standard/generate")
-//     .then((response) => {
-//       console.log(response.data.results);
-
 export default App;
