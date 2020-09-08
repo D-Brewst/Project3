@@ -4,14 +4,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Members from "./pages/Members";
 import Signup from "./pages/Signup";
-import {
-  MDBNavbar,
-  MDBNavbarBrand,
-  MDBNavbarNav,
-  MDBNavItem,
-  MDBNavLink,
-  MDBIcon,
-} from "mdbreact";
+import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink } from "mdbreact";
 
 function App() {
   return (
@@ -33,6 +26,7 @@ function App() {
           </MDBNavItem>
         </MDBNavbarNav>
       </MDBNavbar>
+
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
@@ -42,4 +36,5 @@ function App() {
     </Router>
   );
 }
+
 export default App;
