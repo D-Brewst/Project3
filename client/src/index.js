@@ -6,10 +6,6 @@ import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-<<<<<<< HEAD
-
-=======
->>>>>>> 49d37c51a9f76d4580acdf792abd0b4bcd801c49
 ReactDOM.render(
   <React.StrictMode>
     <App />
