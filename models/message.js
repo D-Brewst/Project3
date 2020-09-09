@@ -48,3 +48,5 @@ db.Message.remove({})
     console.error(err);
     process.exit(1);
   });
+
+export default messageSeed;

@@ -1,4 +1,5 @@
 import React from "react";
+import Members from "../pages/Members";
 import {
   MDBCard,
   MDBCardBody,
@@ -22,13 +23,10 @@ const CardExample = () => {
             </a>
             <MDBCardTitle>BIRTHDAY</MDBCardTitle>
             <hr className="hr-light" />
-            <MDBCardText className="white-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card&apos;s content.
-            </MDBCardText>
+            <MDBCardText className="white-text">{text}</MDBCardText>
             <a href="#!" className="black-text d-flex justify-content-end">
               <h5 className="white-text">
-                GENERATE
+                <button onClick={Members}>generate</button>
                 <MDBIcon fab icon="first-order-alt" className="ml-2" />
               </h5>
             </a>
