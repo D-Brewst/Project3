@@ -1,6 +1,15 @@
 import React from "react";
 import {  MDBJumbotron, MDBContainer, MDBBtn, MDBCard, MDBCardBody, MDBCardImage,
           MDBCardTitle, MDBCardText, MDBRow, MDBCol, MDBView, MDBIcon } from "mdbreact";
+import {
+  MDBJumbotron,
+  MDBBtn,
+  MDBContainer,
+  MDBRow,
+  MDBCol,
+  MDBCardTitle,
+  // MDBIcon,
+} from "mdbreact";
 import "./style.css";
 function Home() {
   return (
