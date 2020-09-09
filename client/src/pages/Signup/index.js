@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from "mdbreact";
+import { MDBContainer, MDBRow, MDBCol, MDBInput } from "mdbreact";
 import axios from "axios";
 
 const Signup = () => {
