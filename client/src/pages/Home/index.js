@@ -16,10 +16,11 @@ function Home() {
         <MDBRow className="pt-5">
           <MDBCol className="text-black text-center py-5 px-4 mr-5">
             <div>
-              <h2 className="h1 header-text">Hello, world!</h2>
+              <h2 className="h1 header-text">Hello, User!</h2>
               <p className="lead">
-                This is a simplee hero unit, a simple Jumbotron-style component
-                for calling extra attention to featured content or information.
+                This is a simple card generator, a simple Jumbotron-style
+                component for calling extra attention to featured content or
+                information.
               </p>
               <hr className="my-2" />
               <p>
