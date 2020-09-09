@@ -1,10 +1,16 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Members from "./pages/Members";
-import Signup from "./pages/Signup";
-import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink } from "mdbreact";
+import Home from "./pages/Home/index";
+import Login from "./pages/Login/index";
+import Members from "./pages/Members/index";
+import Signup from "./pages/Signup/index";
+import {
+  MDBNavbar,
+  MDBNavbarBrand,
+  MDBNavbarNav,
+  MDBNavItem,
+  MDBNavLink,
+} from "mdbreact";
 
 function App() {
   return (
