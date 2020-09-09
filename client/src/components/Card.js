@@ -2,14 +2,13 @@ import React from "react";
 import {
   MDBCard,
   MDBCardBody,
-  MDBCardImage,
+  // MDBCardImage,
   MDBCardTitle,
   MDBCardText,
   MDBRow,
   MDBCol,
   MDBIcon,
 } from "mdbreact";
-
 const CardExample = () => {
   return (
     <MDBRow className="mt-5 justify-content-center">
@@ -38,5 +37,4 @@ const CardExample = () => {
     </MDBRow>
   );
 };
-
 export default CardExample;
