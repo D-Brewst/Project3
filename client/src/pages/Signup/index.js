@@ -15,6 +15,14 @@ const Signup = () => {
   //     password: passwordRef.current.value,
   //   });
   const doSignup = async () => {
+    console.log(
+      "USER",
+      userNameRef.current.value,
+      "EMAIL",
+      emailRef.current.value,
+      "PW",
+      passwordRef.current.value
+    );
     const { data } = await axios.post("/auth/register", {
       username: userNameRef.current.value,
       email: emailRef.current.value,

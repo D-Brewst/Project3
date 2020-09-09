@@ -6,3 +6,8 @@ function Members() {
 }
 
 export default Members;
+// const [message, setMessage] = useState([]);
+
+// return (onChange = (event) => {
+//   const { text } = event.target;
+//   setMessage(text),
