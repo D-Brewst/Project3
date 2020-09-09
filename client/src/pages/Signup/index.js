@@ -1,11 +1,11 @@
 import React, { useRef } from "react";
-import { MDBContainer, MDBRow, MDBCol, MDBInput } from "mdbreact";
+import { MDBContainer, MDBRow, MDBCol, MDBBtn } from "mdbreact";
 import axios from "axios";
 
 const Signup = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
-  const userNameRef = useRef();
+  const usernameRef = useRef();
 
   // const doSignup = async () => {
   //   const { data } = await axios.post("/auth/register", {
@@ -15,8 +15,16 @@ const Signup = () => {
   //     password: passwordRef.current.value,
   //   });
   const doSignup = async () => {
+    console.log(
+      "USER",
+      usernameRef.current.value,
+      "EMAIL",
+      emailRef.current.value,
+      "PW",
+      passwordRef.current.value
+    );
     const { data } = await axios.post("/auth/register", {
-      username: userNameRef.current.value,
+      username: usernameRef.current.value,
       email: emailRef.current.value,
       password: passwordRef.current.value,
     });
@@ -27,6 +35,7 @@ const Signup = () => {
   const handleSignup = (e) => {
     e.preventDefault();
     doSignup();
+    console.log()
   };
 
   return (
@@ -36,50 +45,27 @@ const Signup = () => {
           <form onSubmit={handleSignup}>
             <p className="h5 text-center mb-4">Sign up</p>
             <div className="grey-text">
-              <MDBInput
-                label="your user name"
-                ref={userNameRef}
-                icon="user"
-                group
-                type="text"
-                validate
-                error="wrong"
-                success="right"
-              />
-              <MDBInput
-                label="Your email"
-                icon="envelope"
-                group
-                type="email"
-                validate
-                error="wrong"
-                success="right"
-              />
-              <MDBInput
-                label="Confirm your email"
-                ref={emailRef}
-                icon="exclamation-triangle"
-                group
-                type="text"
-                validate
-                error="wrong"
-                success="right"
-              />
-              <MDBInput
-                label="Your password"
-                ref={passwordRef}
-                icon="lock"
-                group
-                type="password"
-                validate
-              />
+              <div className="md-form form-group">
+                <i data-test="fa" className="fa fa-user prefix"></i>
+                <input data-test="input" type="text" className="form-control validate" aria-disabled="false" ref={usernameRef} />
+                <label className="active" data-error="wrong" data-success="right" id="" aria-labelledby="">Your username</label>
+              </div>
+              <div className="md-form form-group">
+                <i data-test="fa" className="fa fa-envelope prefix"></i>
+                <input data-test="input" type="email" className="form-control validate" aria-disabled="false" ref={emailRef} />
+                <label className="active" data-error="wrong" data-success="right" id="" aria-labelledby="">Your email</label>
+              </div>
+              <div className="md-form form-group">
+                <i data-test="fa" className="fa fa-lock prefix"></i>
+                <input data-test="input" type="password" className="form-control validate" aria-disabled="false" ref={passwordRef} />
+                <label className="active" data-error="" data-success="" id="" aria-labelledby="">Your password</label>
+              </div>
             </div>
-            {/* <div className="text-center">
+            <div className="text-center">
               <MDBBtn color="primary" type="submit">
                 Register
               </MDBBtn>
-            </div> */}
-            <button type="submit">Submit</button>
+            </div>
           </form>
         </MDBCol>
       </MDBRow>
