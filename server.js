@@ -21,12 +21,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/card", {
   useNewUrlParser: true,
 });
 
-// app.get("/api/welcome", (req, res) => {
-//   res.json({
-//     message: "Welcome to a Full Stack App",
-//   });
-// });
-
 app.listen(PORT, () => {
   console.log(`Your server is running on http://localhost:${PORT}`);
 });
