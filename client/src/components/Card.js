@@ -1,16 +1,14 @@
 import React from "react";
-import Members from "../pages/Members";
 import {
   MDBCard,
   MDBCardBody,
-  MDBCardImage,
+  // MDBCardImage,
   MDBCardTitle,
   MDBCardText,
   MDBRow,
   MDBCol,
   MDBIcon,
 } from "mdbreact";
-
 const CardExample = () => {
   return (
     <MDBRow className="mt-5 justify-content-center">
@@ -23,10 +21,13 @@ const CardExample = () => {
             </a>
             <MDBCardTitle>BIRTHDAY</MDBCardTitle>
             <hr className="hr-light" />
-            <MDBCardText className="white-text">{text}</MDBCardText>
+            <MDBCardText className="white-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card&apos;s content.
+            </MDBCardText>
             <a href="#!" className="black-text d-flex justify-content-end">
               <h5 className="white-text">
-                <button onClick={Members}>generate</button>
+                GENERATE
                 <MDBIcon fab icon="first-order-alt" className="ml-2" />
               </h5>
             </a>
@@ -36,5 +37,4 @@ const CardExample = () => {
     </MDBRow>
   );
 };
-
 export default CardExample;

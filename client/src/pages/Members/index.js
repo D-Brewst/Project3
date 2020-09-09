@@ -1,14 +1,8 @@
 import React from "react";
-import Card from "../components/Card";
-import message from "/message";
+import Card from "../../components/Card";
 
 function Members() {
-  const [message, setMessage] = useState([]);
-
-  return (onChange = (event) => {
-    const { text } = event.target;
-    setMessage(text), (<Card />);
-  });
+  return <Card />;
 }
 
 export default Members;
