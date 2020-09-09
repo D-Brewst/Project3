@@ -18,7 +18,7 @@ function Home() {
             <div>
               <h2 className="h1 header-text">Hello, world!</h2>
               <p className="lead">
-                This is a simple hero unit, a simple Jumbotron-style component
+                This is a simplee hero unit, a simple Jumbotron-style component
                 for calling extra attention to featured content or information.
               </p>
               <hr className="my-2" />
