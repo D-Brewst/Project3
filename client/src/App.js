@@ -1,16 +1,15 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Members from "./pages/Members";
-import Signup from "./pages/Signup";
+import Home from "./pages/Home/index";
+import Login from "./pages/Login/index";
+import Members from "./pages/Members/index";
+import Signup from "./pages/Signup/index";
 import {
   MDBNavbar,
   MDBNavbarBrand,
   MDBNavbarNav,
   MDBNavItem,
   MDBNavLink,
-  MDBIcon,
 } from "mdbreact";
 
 function App() {
@@ -33,6 +32,7 @@ function App() {
           </MDBNavItem>
         </MDBNavbarNav>
       </MDBNavbar>
+
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
@@ -42,4 +42,5 @@ function App() {
     </Router>
   );
 }
+
 export default App;
