@@ -35,7 +35,7 @@ const Signup = () => {
   const handleSignup = (e) => {
     e.preventDefault();
     doSignup();
-    console.log()
+    console.log();
   };
 
   return (
@@ -47,18 +47,60 @@ const Signup = () => {
             <div className="grey-text">
               <div className="md-form form-group">
                 <i data-test="fa" className="fa fa-user prefix"></i>
-                <input data-test="input" type="text" className="form-control validate" aria-disabled="false" ref={usernameRef} />
-                <label className="active" data-error="wrong" data-success="right" id="" aria-labelledby="">Your username</label>
+                <input
+                  data-test="input"
+                  type="text"
+                  className="form-control validate"
+                  aria-disabled="false"
+                  ref={usernameRef}
+                />
+                <label
+                  className="active"
+                  data-error="wrong"
+                  data-success="right"
+                  id=""
+                  aria-labelledby=""
+                >
+                  Your username
+                </label>
               </div>
               <div className="md-form form-group">
                 <i data-test="fa" className="fa fa-envelope prefix"></i>
-                <input data-test="input" type="email" className="form-control validate" aria-disabled="false" ref={emailRef} />
-                <label className="active" data-error="wrong" data-success="right" id="" aria-labelledby="">Your email</label>
+                <input
+                  data-test="input"
+                  type="email"
+                  className="form-control validate"
+                  aria-disabled="false"
+                  ref={emailRef}
+                />
+                <label
+                  className="active"
+                  data-error="wrong"
+                  data-success="right"
+                  id=""
+                  aria-labelledby=""
+                >
+                  Your email
+                </label>
               </div>
               <div className="md-form form-group">
                 <i data-test="fa" className="fa fa-lock prefix"></i>
-                <input data-test="input" type="password" className="form-control validate" aria-disabled="false" ref={passwordRef} />
-                <label className="active" data-error="" data-success="" id="" aria-labelledby="">Your password</label>
+                <input
+                  data-test="input"
+                  type="password"
+                  className="form-control validate"
+                  aria-disabled="false"
+                  ref={passwordRef}
+                />
+                <label
+                  className="active"
+                  data-error=""
+                  data-success=""
+                  id=""
+                  aria-labelledby=""
+                >
+                  Your password
+                </label>
               </div>
             </div>
             <div className="text-center">
