@@ -1,10 +1,6 @@
 const mongoose = require("mongoose");
 const db = require("../models");
 
-const databaseUrl = "card";
-const collections = ["message"];
-const db = mongojs(databaseUrl, collections);
-
 // This file empties the Books collection and inserts the books below
 
 const messageSeed = [
@@ -48,3 +44,5 @@ db.Message.remove({})
     console.error(err);
     process.exit(1);
   });
+
+export default messageSeed;
