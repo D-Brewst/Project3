@@ -6,7 +6,7 @@ import {
   MDBRow,
   MDBCol,
   MDBCardTitle,
-  MDBIcon,
+  // MDBIcon,
 } from "mdbreact";
 import "./style.css";
 function Home() {
