@@ -4,7 +4,7 @@ import Home from "./pages/Home/index";
 import Login from "./pages/Login/index";
 import Members from "./pages/Members/index";
 import Signup from "./pages/Signup/index";
-import { LOGIN } from "./context/actions";
+import { LOGIN, LOGOUT } from "./context/actions";
 import {
   MDBNavbar,
   MDBNavbarBrand,
@@ -18,7 +18,7 @@ function App() {
   const [state, dispatch] = useGlobalContext();
   //check if there is authenticated user
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("authuser"));
+    const user = JSON.parse(localStorage.getItem("authuser")) || {};
     if (user.token) {
       dispatch({
         type: LOGIN,
@@ -27,6 +27,12 @@ function App() {
     }
   }, []);
 
+  function logOut() {
+    localStorage.removeItem("authuser");
+    dispatch({
+      type: LOGOUT,
+    });
+  }
   return (
     <div className="App">
       {state.user.token ? (
@@ -41,7 +47,7 @@ function App() {
                 <MDBNavLink to="/members">Members</MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
-                <MDBNavLink to="/">Log Out</MDBNavLink>
+                <span onClick={logOut}>Log Out</span>
               </MDBNavItem>
             </MDBNavbarNav>
           </MDBNavbar>

@@ -9,7 +9,7 @@ const Login = () => {
 
   const logemailRef = useRef();
   const logpasswordRef = useRef();
-
+  //putting in local storage AND state
   const doLogin = async () => {
     //login user and get token back
     const { data } = await axios.post("/auth/login", {
