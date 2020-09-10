@@ -1,8 +1,13 @@
 const mongoose = require("mongoose");
 const db = require("../models");
 
-// This file empties the Books collection and inserts the books below
+// Connect to the Mongo DB
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/card", {
+  useCreateIndex: true,
+  useNewUrlParser: true,
+});
 
+// This file empties the Books collection and inserts the books below
 const messageSeed = [
   {
     occasion: "birthday",
@@ -44,5 +49,3 @@ db.Message.remove({})
     console.error(err);
     process.exit(1);
   });
-
-export default messageSeed;
