@@ -4,7 +4,6 @@ import Halloweencard from "../../components/Halloween";
 import Hannukahcard from "../../components/Hannukah";
 import Christmascard from "../../components/Christmas";
 import CardExample from "../../components/Card";
-
 /**
  *
  * @param {any[]} arr Array to select random item from
@@ -37,7 +36,11 @@ function Members() {
     });
 
   return (
-    <>{state.selected && <CardExample card={state.selected} onClick={getRandom} />}</>
+    <>
+      {state.selected && (
+        <CardExample card={state.selected} onClick={getRandom} />
+      )}
+    </>
   );
   // return (
   //   // <div>
