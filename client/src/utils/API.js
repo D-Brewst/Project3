@@ -1,0 +1,18 @@
+import axios from "axios";
+const token = () => JSON.parse(localStorage.getItem("authuser")).token;
+
+export default {
+  getCards: async () => {
+    try {
+      const response = await axios("/api/messages", {
+        headers: {
+          Authorization: "Bearer " + token(),
+        },
+      });
+
+      return response.data;
+    } catch (error) {
+      console.log(error.message);
+    }
+  },
+};
