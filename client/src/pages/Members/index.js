@@ -4,7 +4,7 @@ import Halloweencard from "../../components/Halloween";
 import Hannukahcard from "../../components/Hannukah";
 import Christmascard from "../../components/Christmas";
 import CardExample from "../../components/Card/Card";
-import { MDBRow } from "mdbreact";
+import { MDBRow, MDBCol } from "mdbreact";
 /**
  *
  * @param {any[]} arr Array to select random item from
@@ -37,18 +37,20 @@ function Members() {
     });
 
   return (
-    <div>
+    <MDBRow className="mt-5 justify-content-center">
       <MDBRow className="mt-5 justify-content-center">
-        <MDBRow className="mt-5 justify-content-center">
+        <div style={{ width: "50%" }}>
           {state.selected && (
             <CardExample card={state.selected} onClick={getRandom} />
           )}
+        </div>
+        <div style={{ width: "50%" }}>
           <Halloweencard />
-        </MDBRow>
-        <Christmascard />
-        <Hannukahcard />
+        </div>
       </MDBRow>
-    </div>
+      <Christmascard />
+      <Hannukahcard />
+    </MDBRow>
   );
 }
 
