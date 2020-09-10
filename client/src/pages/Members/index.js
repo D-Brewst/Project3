@@ -60,18 +60,7 @@
 //   // );
 // }
 // export default Members;
-
-
 import React from "react";
-<<<<<<< HEAD
-<<<<<<< HEAD
-import Topcard from '../../components/TopCard';
-import Bottomcard from '../../components/BottomCard';
-=======
-=======
-import Topcard from '../../components/TopCard';
-import Bottomcard from '../../components/BottomCard';
->>>>>>> master
 import Birthdaycard from "../../components/Birthday";
 import Halloweencard from "../../components/Halloween";
 import Hannukahcard from "../../components/Hannukah";
@@ -83,14 +72,6 @@ import CardExample from "../../components/Card";
  * @returns {any} Random element from arr
  */
 const randArrayEl = (arr) => arr[Math.floor(Math.random() * arr.length)];
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 6278d2c53bd759428b9a975261efa2be871498c8
-=======
->>>>>>> master
-
-=======
->>>>>>> 6ec159d618a8f366077f2ee9aec993db6ca4875b
 function Members() {
   const [state, setState] = React.useState({
     messages: [],
@@ -113,31 +94,7 @@ function Members() {
       selected: state.messages.length ? randArrayEl(state.messages) : {},
     });
   return (
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> master
-    <div>
-      <Topcard />
-      <Bottomcard />
-    </div>
-  )
-<<<<<<< HEAD
-=======
-    <>
-      {state.selected && (
-        <CardExample card={state.selected} onClick={getRandom} />
-      )}
-    </>
-=======
-
     <>{state.selected && <CardExample card={state.selected} onClick={getRandom} />}</>
->>>>>>> master
-=======
-    <>{state.selected && <CardExample card={state.selected} onClick={getRandom} />}</>
->>>>>>> 6ec159d618a8f366077f2ee9aec993db6ca4875b
   );
   // return (
   //   // <div>
@@ -147,10 +104,5 @@ function Members() {
   //   //   <Christmascard />
   //   // </div>
   // );
-<<<<<<< HEAD
->>>>>>> 6278d2c53bd759428b9a975261efa2be871498c8
-=======
-
->>>>>>> master
 }
 export default Members;
