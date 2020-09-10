@@ -11,36 +11,59 @@ import {
   MDBNavItem,
   MDBNavLink,
 } from "mdbreact";
+import { useGlobalContext } from "./context/GlobalContext";
 
 function App() {
-  return (
-    <Router>
-      <MDBNavbar color="black" dark expand="md">
-        <MDBNavbarBrand>WILDCARD</MDBNavbarBrand>
-        <MDBNavbarNav left>
-          <MDBNavItem active>
-            <MDBNavLink to="/">Home</MDBNavLink>
-          </MDBNavItem>
-          <MDBNavItem>
-            <MDBNavLink to="/login">Login</MDBNavLink>
-          </MDBNavItem>
-          <MDBNavItem>
-            <MDBNavLink to="/signup">Sign Up</MDBNavLink>
-          </MDBNavItem>
-          <MDBNavItem>
-            <MDBNavLink to="/members">Members</MDBNavLink>
-          </MDBNavItem>
-        </MDBNavbarNav>
-      </MDBNavbar>
-
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/signup" component={Signup} />
-        <Route exact path="/members" component={Members} />
-      </Switch>
-    </Router>
-  );
+    const [state, dispatch] = useGlobalContext();
+  
+    return (
+      <div className="App">
+        {state.user.token ? 
+        <Router>
+        <MDBNavbar color="black" dark expand="md">
+          <MDBNavbarBrand>WILDCARD</MDBNavbarBrand>
+          <MDBNavbarNav left>
+            <MDBNavItem active>
+              <MDBNavLink to="/">Home</MDBNavLink>
+            </MDBNavItem>
+            <MDBNavItem>
+              <MDBNavLink to="/members">Members</MDBNavLink>
+            </MDBNavItem>
+            <MDBNavItem>
+              <MDBNavLink to="/">Log Out</MDBNavLink>
+            </MDBNavItem>
+          </MDBNavbarNav>
+        </MDBNavbar>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/members" component={Members} />
+        </Switch>
+      </Router> 
+        :
+      <Router>
+        <MDBNavbar color="black" dark expand="md">
+          <MDBNavbarBrand>WILDCARD</MDBNavbarBrand>
+          <MDBNavbarNav left>
+            <MDBNavItem active>
+              <MDBNavLink to="/">Home</MDBNavLink>
+            </MDBNavItem>
+            <MDBNavItem>
+              <MDBNavLink to="/login">Login</MDBNavLink>
+            </MDBNavItem>
+            <MDBNavItem>
+              <MDBNavLink to="/signup">Sign Up</MDBNavLink>
+            </MDBNavItem>
+          </MDBNavbarNav>
+        </MDBNavbar>
+  
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/signup" component={Signup} />
+        </Switch>
+      </Router>}
+      </div>
+    );
 }
 
 export default App;
