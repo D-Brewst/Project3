@@ -1,16 +1,12 @@
 import React from "react";
-import Birthdaycard from '../../components/Birthday';
-import Halloweencard from '../../components/Halloween';
-import Hannukahcard from '../../components/Hannukah';
-import Christmascard from '../../components/Christmas';
+import Topcard from '../../components/TopCard';
+import Bottomcard from '../../components/BottomCard';
 
 function Members() {
   return (
     <div>
-      <Birthdaycard />
-      <Halloweencard />
-      <Hannukahcard />
-      <Christmascard />
+      <Topcard />
+      <Bottomcard />
     </div>
   )
 }
