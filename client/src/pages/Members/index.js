@@ -3,7 +3,8 @@ import Birthdaycard from "../../components/Birthday";
 import Halloweencard from "../../components/Halloween";
 import Hannukahcard from "../../components/Hannukah";
 import Christmascard from "../../components/Christmas";
-import CardExample from "../../components/Card";
+import CardExample from "../../components/Card/Card";
+import { MDBRow } from "mdbreact";
 /**
  *
  * @param {any[]} arr Array to select random item from
@@ -36,20 +37,19 @@ function Members() {
     });
 
   return (
-    <>
-      {state.selected && (
-        <CardExample card={state.selected} onClick={getRandom} />
-      )}
-    </>
+    <div>
+      <MDBRow className="mt-5 justify-content-center">
+        <MDBRow className="mt-5 justify-content-center">
+          {state.selected && (
+            <CardExample card={state.selected} onClick={getRandom} />
+          )}
+          <Halloweencard />
+        </MDBRow>
+        <Christmascard />
+        <Hannukahcard />
+      </MDBRow>
+    </div>
   );
-  // return (
-  //   // <div>
-  //   //   <Birthdaycard />
-  //   //   <Halloweencard />
-  //   //   <Hannukahcard />
-  //   //   <Christmascard />
-  //   // </div>
-  // );
 }
 
 export default Members;
