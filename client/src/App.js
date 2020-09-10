@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home/index";
 import Login from "./pages/Login/index";
 import Members from "./pages/Members/index";
 import Signup from "./pages/Signup/index";
 import Footer from "./components/Footer/index";
+import { LOGIN, LOGOUT } from "./context/actions";
 import {
   MDBNavbar,
   MDBNav,
@@ -18,7 +19,23 @@ import logo from "./images/candle_2.svg";
 
 function App() {
   const [state, dispatch] = useGlobalContext();
+  //check if there is authenticated user
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("authuser")) || {};
+    if (user.token) {
+      dispatch({
+        type: LOGIN,
+        user: user,
+      });
+    }
+  }, []);
 
+  function logOut() {
+    localStorage.removeItem("authuser");
+    dispatch({
+      type: LOGOUT,
+    });
+  }
   return (
     <div className="App">
       {state.user.token ? (
@@ -42,7 +59,7 @@ function App() {
             </MDBNavItem>
             <MDBNavItem>
               <MDBNavLink className="black-text" to="/">
-                Log Out
+                <span onClick={logOut}>Log Out</span>{" "}
               </MDBNavLink>
             </MDBNavItem>
           </MDBNav>

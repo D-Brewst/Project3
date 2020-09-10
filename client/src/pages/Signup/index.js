@@ -1,11 +1,13 @@
 import React, { useRef } from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBBtn } from "mdbreact";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 const Signup = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
   const usernameRef = useRef();
+  const history = useHistory();
 
   // const doSignup = async () => {
   //   const { data } = await axios.post("/auth/register", {
@@ -104,7 +106,11 @@ const Signup = () => {
               </div>
             </div>
             <div className="text-center">
-              <MDBBtn color="primary" type="submit">
+              <MDBBtn
+                color="primary"
+                type="submit"
+                // onClick={() => history.push("/members")}
+              >
                 Register
               </MDBBtn>
             </div>
