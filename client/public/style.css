@@ -1,0 +1,50 @@
+.logo {
+  position: fixed;
+  margin-left: 1em;
+  /* margin-top: 0.2em; */
+}
+
+body {
+  margin: 0 0 100px;
+  /* bottom = footer height */
+  padding: 25px;
+}
+
+.nav-class {
+  padding-top: 0.7em;
+  position: sticky;
+}
+
+.spinner {
+  animation: Rotate 10s both infinite linear;
+}
+.path {
+  animation: DrawLine 1.6s both infinite alternate linear;
+  fill: none;
+  stroke: #000;
+  stroke-width: 50;
+}
+@keyframes Rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.nav-link :hover {
+  color: red;
+}
+
+.samplecard-div {
+  margin-top: -150px;
+}
+
+.page-footer {
+  position: inherit;
+  left: 0;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+}
