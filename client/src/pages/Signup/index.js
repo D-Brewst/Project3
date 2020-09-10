@@ -55,6 +55,7 @@ const Signup = () => {
                   className="form-control validate"
                   aria-disabled="false"
                   ref={usernameRef}
+                  required
                 />
                 <label
                   className="active"
@@ -74,6 +75,7 @@ const Signup = () => {
                   className="form-control validate"
                   aria-disabled="false"
                   ref={emailRef}
+                  required
                 />
                 <label
                   className="active"
@@ -93,6 +95,7 @@ const Signup = () => {
                   className="form-control validate"
                   aria-disabled="false"
                   ref={passwordRef}
+                  required
                 />
                 <label
                   className="active"

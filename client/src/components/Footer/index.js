@@ -11,9 +11,8 @@ const Footer = () => {
             <p>New York, New York</p>
           </MDBCol>
           <MDBCol>
-            {" "}
             <h4>
-              <i class="fas fa-grin-alt"></i>
+              <i className="fas fa-grin-alt"></i>
             </h4>
             <a className="black-text" href="#!">
               Devon Brewster
@@ -22,7 +21,7 @@ const Footer = () => {
           <MDBCol>
             {" "}
             <h4>
-              <i class="fas fa-grin-tongue-wink"></i>
+              <i className="fas fa-grin-tongue-wink"></i>
             </h4>
             <a className="black-text" href="#!">
               Melissa Mercado
@@ -31,7 +30,7 @@ const Footer = () => {
           <MDBCol>
             {" "}
             <h4>
-              <i class="fas fa-grin-stars"></i>
+              <i className="fas fa-grin-stars"></i>
             </h4>
             <a className="black-text" href="#!">
               Justin Ramirez
@@ -40,7 +39,7 @@ const Footer = () => {
           <MDBCol>
             {" "}
             <h4>
-              <i class="fas fa-grin-squint"></i>
+              <i className="fas fa-grin-squint"></i>
             </h4>
             <a className="black-text" href="#!">
               Joshua Wilensky
@@ -49,7 +48,7 @@ const Footer = () => {
           <MDBCol>
             {" "}
             <h4>
-              <i class="fas fa-flushed"></i> <br />
+              <i className="fas fa-flushed"></i> <br />
             </h4>
             <a className="black-text" href="#!">
               Ankit Bagchi
