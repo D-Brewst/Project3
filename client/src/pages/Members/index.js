@@ -3,6 +3,7 @@ import Birthdaycard from "../../components/Birthday";
 import Halloweencard from "../../components/Halloween";
 import Hannukahcard from "../../components/Hannukah";
 import Christmascard from "../../components/Christmas";
+import CardExample from "../../components/Card";
 
 /**
  *
@@ -36,7 +37,7 @@ function Members() {
     });
 
   return (
-    <>{state.selected && <Card card={state.selected} onClick={getRandom} />}</>
+    <>{state.selected && <CardExample card={state.selected} onClick={getRandom} />}</>
   );
   // return (
   //   // <div>
