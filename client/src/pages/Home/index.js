@@ -16,52 +16,62 @@ import {
 
 import "./style.css";
 
+import starlogo from "../../images/color-logo.svg";
+import samplecard from "../../images/samplecard.svg";
+
 function Home() {
   return (
     <div>
-      <MDBContainer className="mt-5 text-center">
+      <MDBContainer className="mt-5 justify-content-center">
         <MDBRow className="pt-5">
-          <MDBCol className="text-black text-center py-5 px-4 mr-5">
-            <div>
-              <h2 className="h1 header-text">Hello, world!</h2>
+          <MDBCol className="text-black py-5 px-4 mr-5">
+            <div className="justify-content-center text-center">
+              {/* <h2 className="h1 header-text">Hello, world!</h2> */}
+              <img
+                width="250px"
+                className="spinner justify-content-center"
+                src={starlogo}
+                alt=""
+              />
               <p className="lead">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries.
+                Never write a card again. Generate a card for any occasion with
+                WYLDCARD.
               </p>
               <hr className="my-2" />
-              <p>
-                It uses utility classes for typgraphy and spacing to space
-                content out within the larger container.
-              </p>
+              <i className="px-2 fa-lg li-ic">
+                <i className="px-2 fa-lg li-ic" class="fas fa-gift"></i>
+              </i>
+              <i className="px-2 fa-lg li-ic">
+                <i class="fas fa-ghost"></i>
+              </i>
+              <i className="px-2 fa-lg li-ic">
+                <i class="fas fa-birthday-cake"></i>
+              </i>
+              <i className="px-2 fa-lg li-ic">
+                <i class="fas fa-menorah"></i>{" "}
+              </i>
+              <br /> <br />
               <p className="lead">
-                <MDBBtn color="primary">Login</MDBBtn>
+                <MDBBtn color="black">Sign Up</MDBBtn>
               </p>
             </div>
           </MDBCol>
-          <MDBCol className="ml-5">
-            <MDBJumbotron style={{ padding: 0 }}>
-              <MDBCol
-                className="text-white text-center py-5 px-4 my-5"
-                style={{
-                  backgroundImage: `url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg)`,
-                }}
-              >
-                <MDBCol className="py-5">
-                  <MDBCardTitle className="h1-responsive pt-3 m-5 font-bold">
-                    BIG PICTURE
-                  </MDBCardTitle>
-                  <p className="mx-5 mb-5">BIG PICTURE</p>
-                </MDBCol>
-              </MDBCol>
-            </MDBJumbotron>
+        </MDBRow>
+
+        {/* image box */}
+        <MDBRow className="samplecard-div">
+          <MDBCol className="samplecard-div text-white text-center py-5 px-4 my-5">
+            <img
+              width="auto"
+              className="justify-content-center"
+              src={samplecard}
+              alt=""
+            />
           </MDBCol>
         </MDBRow>
       </MDBContainer>
 
-      <MDBRow>
+      {/* <MDBRow>
         <MDBCol md="4">
           <MDBCard wide cascade>
             <MDBView cascade>
@@ -172,7 +182,7 @@ function Home() {
             </MDBCardBody>
           </MDBCard>
         </MDBCol>
-      </MDBRow>
+      </MDBRow> */}
     </div>
   );
 }
