@@ -109,7 +109,7 @@ const Signup = () => {
               <MDBBtn
                 color="primary"
                 type="submit"
-                onClick={() => history.push("/members")}
+                // onClick={() => history.push("/members")}
               >
                 Register
               </MDBBtn>

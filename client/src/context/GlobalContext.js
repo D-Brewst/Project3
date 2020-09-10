@@ -1,7 +1,8 @@
 import React, { useReducer, createContext, useContext} from "react";
 import {
   LOGIN,
-  LOGOUT
+  LOGOUT,
+  Messages
 } from "./actions";
 
 // create the context
@@ -10,17 +11,24 @@ const GlobalContext = createContext();
 const { Provider } = GlobalContext;
 
 const reducer = (state, action) => {
+  console.log(state)
+  console.log(action)
   switch (action.type) {
     case LOGOUT: 
       return {
         ...state,
-        user: {}
+        user: {},
       }
     case LOGIN:
       return {
         ...state,
         user: action.user
       };
+    case Messages:
+      return {
+        ...state,
+        messages: action.Messages
+      }
     default:
       return state;
   }
