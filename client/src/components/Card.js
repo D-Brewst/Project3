@@ -10,12 +10,24 @@ import {
   MDBIcon,
 } from "mdbreact";
 const CardExample = ({ card, onClick }) => {
+  const icons = {
+    birthday: { icon: "birthday-cake", color: "" },
+    Christmas: { icon: "candy-cane", color: "" },
+    Halloween: { icon: "candy-cane", color: "" },
+    Hannukah: { icon: "candy-cane", color: "" },
+  };
+
   return (
     <MDBRow className="mt-5 justify-content-center">
       <MDBCol md="4">
         <MDBCard>
-          <MDBIcon className="text-center" icon="birthday-cake" />
-          <MDBCardBody className="elegant-color white-text rounded-bottom">
+          <MDBIcon
+            className="text-center"
+            icon={
+              icons[card.occasion] ? icons[card.occasion].icon : "candy-cane"
+            }
+          />
+          <MDBCardBody className="white-text rounded-bottom elegant-color">
             <MDBIcon icon="share-alt" className="white-text" />
             <MDBCardTitle>{card.occasion}</MDBCardTitle>
             <hr className="hr-light" />
@@ -29,5 +41,11 @@ const CardExample = ({ card, onClick }) => {
       </MDBCol>
     </MDBRow>
   );
+};
+
+CardExample.defaultProps = {
+  card: {
+    occasion: "birthday",
+  },
 };
 export default CardExample;
