@@ -39,16 +39,16 @@ function Home() {
               </p>
               <hr className="my-2" />
               <i className="px-2 fa-lg li-ic">
-                <i className="px-2 fa-lg li-ic" class="fas fa-gift"></i>
+                <i className="px-2 fa-lg li-ic" className="fas fa-gift"></i>
               </i>
               <i className="px-2 fa-lg li-ic">
-                <i class="fas fa-ghost"></i>
+                <i className="fas fa-ghost"></i>
               </i>
               <i className="px-2 fa-lg li-ic">
-                <i class="fas fa-birthday-cake"></i>
+                <i className="fas fa-birthday-cake"></i>
               </i>
               <i className="px-2 fa-lg li-ic">
-                <i class="fas fa-menorah"></i>{" "}
+                <i className="fas fa-menorah"></i>{" "}
               </i>
               <br /> <br />
               <p className="lead">

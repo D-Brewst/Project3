@@ -41,12 +41,11 @@ function App() {
       {state.user.token ? (
         <Router>
           <div className="logo">
-            {" "}
             <MDBNavLink to="/">
               <img width="50px" src={logo} alt="" />
             </MDBNavLink>
           </div>
-          <MDBNav className="nav-class justify-content-end" dark expand="md">
+          <MDBNav className="nav-class justify-content-end" expand="md">
             {/* <MDBNavItem className="black-text" active>
                 <MDBNavLink className="black-text" to="/">
                   Home
