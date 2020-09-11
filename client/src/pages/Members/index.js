@@ -68,7 +68,7 @@ import Birthdaycard from "../../components/Birthday";
 import Halloweencard from "../../components/Halloween";
 import Hannukahcard from "../../components/Hannukah";
 import Christmascard from "../../components/Christmas";
-import Card from "../../components/Card";
+import Card from "../../components/Card/Card";
 
 /**
  *
@@ -89,7 +89,7 @@ function Members() {
       setState((state) => ({
         ...state,
         messages: res,
-        selected: res.length ? randArrayEl(res) : {},
+        selected: res?.length ? randArrayEl(res) : {},
       }));
     });
   }, []);
@@ -97,7 +97,7 @@ function Members() {
   const getRandom = () =>
     setState({
       ...state,
-      selected: state.messages.length ? randArrayEl(state.messages) : {},
+      selected: state.messages?.length ? randArrayEl(state.messages) : {},
     });
   return (
     <>
@@ -105,18 +105,10 @@ function Members() {
 
       <hr />
 
-      {state.messages.map((card, i) => (
+      {/* {state.messages.map((card, i) => (
         <Card key={i + "card"} card={card} />
-      ))}
+      ))} */}
     </>
   );
-  // return (
-  //   // <div>
-  //   //   <Birthdaycard />
-  //   //   <Halloweencard />
-  //   //   <Hannukahcard />
-  //   //   <Christmascard />
-  //   // </div>
-  // );
 }
 export default Members;
