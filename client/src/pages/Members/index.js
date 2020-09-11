@@ -60,17 +60,13 @@
 //   // );
 // }
 // export default Members;
-<<<<<<< HEAD
-=======
-
->>>>>>> 7971e8e675c132a86a08057de9ea7265aa5466c4
 import React from "react";
 import API from "../../utils/API";
 
-import Birthdaycard from "../../components/Birthday";
-import Halloweencard from "../../components/Halloween";
-import Hannukahcard from "../../components/Hannukah";
-import Christmascard from "../../components/Christmas";
+// import Birthdaycard from "../../components/Birthday";
+// import Halloweencard from "../../components/Halloween";
+// import Hannukahcard from "../../components/Hannukah";
+// import Christmascard from "../../components/Christmas";
 import Card from "../../components/Card";
 
 /**
