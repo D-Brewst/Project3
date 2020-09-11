@@ -1,5 +1,10 @@
 import React, { useEffect } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 import Home from "./pages/Home/index";
 import Login from "./pages/Login/index";
 import Members from "./pages/Members/index";
@@ -37,77 +42,51 @@ function App() {
     });
   }
   return (
-    <div className="App">
-      {state.user.token ? (
-        <Router>
-          <div className="logo">
-            <MDBNavLink to="/">
-              <img width="50px" src={logo} alt="" />
-            </MDBNavLink>
-          </div>
-          <MDBNav className="nav-class justify-content-end" expand="md">
-            {/* <MDBNavItem className="black-text" active>
-                <MDBNavLink className="black-text" to="/">
+    <Router>
+      <div className="logo">
+        {" "}
+        <MDBNavLink to="/">
+          <img width="50px" src={logo} alt="" />
+        </MDBNavLink>
+      </div>
+      <MDBNav className="nav-class justify-content-end" dark expand="md">
+        {/* <MDBNavItem className="justify-content-end" active>
+                <MDBNavLink className="black-text justify-content-end" to="/">
                   Home
                 </MDBNavLink>
               </MDBNavItem> */}
-            <MDBNavItem>
-              <MDBNavLink className="black-text" to="/members">
-                Members
-              </MDBNavLink>
-            </MDBNavItem>
-            <MDBNavItem>
-              <MDBNavLink className="black-text" to="/">
-                <span onClick={logOut}>Log Out</span>{" "}
-              </MDBNavLink>
-            </MDBNavItem>
-          </MDBNav>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/members" component={Members} />
-          </Switch>
-        </Router>
-      ) : (
-        <Router>
-          <div className="logo">
-            {" "}
-            <MDBNavLink to="/">
-              <img width="50px" src={logo} alt="" />
+        {state.user?.token ? (
+          <MDBNavItem>
+            <MDBNavLink className="black-text" to="/">
+              <span onClick={logOut}>Log Out</span>{" "}
             </MDBNavLink>
-          </div>
-          <MDBNav className="nav-class justify-content-end" dark expand="md">
-            {/* <MDBNavItem className="justify-content-end" active>
-              <MDBNavLink className="black-text justify-content-end" to="/">
-                Home
-              </MDBNavLink>
-            </MDBNavItem> */}
-            <MDBNavItem>
-              <MDBNavLink
-                className="black-text justify-content-end"
-                to="/login"
-              >
-                Login
-              </MDBNavLink>
-            </MDBNavItem>
-            <MDBNavItem>
-              <MDBNavLink
-                className="black-text justify-content-end"
-                to="/signup"
-              >
-                Sign Up
-              </MDBNavLink>
-            </MDBNavItem>
-          </MDBNav>
+          </MDBNavItem>
+        ) : (
+          <MDBNavItem>
+            <MDBNavLink className="black-text justify-content-end" to="/login">
+              Login
+            </MDBNavLink>
+          </MDBNavItem>
+        )}
+        <MDBNavItem>
+          <MDBNavLink className="black-text justify-content-end" to="/signup">
+            Sign Up
+          </MDBNavLink>
+        </MDBNavItem>
+      </MDBNav>
 
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/signup" component={Signup} />
-          </Switch>
-        </Router>
-      )}
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/login">
+          {state.user?.token ? <Redirect to="/members" /> : <Login />}
+        </Route>
+        <Route exact path="/signup" component={Signup} />
+        <Route exact path="/members">
+          {!state.user?.token ? <Redirect to="/members" /> : <Members />}
+        </Route>
+      </Switch>
       <Footer />
-    </div>
+    </Router>
   );
 }
 
