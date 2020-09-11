@@ -2,8 +2,12 @@ import React, { useRef } from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBBtn } from "mdbreact";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import { LOGIN } from "../../context/actions";
+import { useGlobalContext } from "../../context/GlobalContext";
+
 
 const Signup = () => {
+  const [state, dispatch] = useGlobalContext();
   const emailRef = useRef();
   const passwordRef = useRef();
   const usernameRef = useRef();
@@ -16,6 +20,25 @@ const Signup = () => {
   //     email: emailRef.current.value,
   //     password: passwordRef.current.value,
   //   });
+
+  const doLogin = async () => {
+    //login user and get token back
+    const { data } = await axios.post("/auth/login", {
+      email: emailRef.current.value,
+      password: passwordRef.current.value,
+    });
+    //once we have data/token
+    console.log(data);
+    //putting that token in local storage using stringify (parse to get back)
+    localStorage.setItem("authuser", JSON.stringify(data));
+
+    //putting token in state
+    dispatch({
+      type: LOGIN,
+      user: data,
+    });
+  };
+
   const doSignup = async () => {
     console.log(
       "USER",
@@ -25,11 +48,18 @@ const Signup = () => {
       "PW",
       passwordRef.current.value
     );
+    // sign up new user
     const { data } = await axios.post("/auth/register", {
       username: usernameRef.current.value,
       email: emailRef.current.value,
       password: passwordRef.current.value,
     });
+
+    doLogin();
+
+    // redirecting user to the members page
+    const redirect = () => history.push("/members");
+    redirect();
 
     console.log(data);
   };
