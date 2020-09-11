@@ -67,7 +67,6 @@ const Signup = () => {
   const handleSignup = (e) => {
     e.preventDefault();
     doSignup();
-    console.log();
   };
 
   return (
