@@ -3,10 +3,13 @@ import { MDBContainer, MDBRow, MDBCol, MDBBtn } from "mdbreact";
 import { useGlobalContext } from "../../context/GlobalContext";
 import axios from "axios";
 import { LOGIN } from "../../context/actions";
+import { useHistory } from "react-router-dom";
+
 
 const Login = () => {
   const [state, dispatch] = useGlobalContext();
 
+  const history = useHistory();
   const logemailRef = useRef();
   const logpasswordRef = useRef();
   //putting in local storage AND state
@@ -26,6 +29,10 @@ const Login = () => {
       type: LOGIN,
       user: data,
     });
+
+    // redirecting user to the members page
+    const redirect = () => history.push("/members");
+    redirect();
   };
 
   const handleSubmit = (e) => {
