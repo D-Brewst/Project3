@@ -63,19 +63,11 @@
 import React from "react";
 import API from "../../utils/API";
 
-<<<<<<< HEAD
-// import Birthdaycard from "../../components/Birthday";
-// import Halloweencard from "../../components/Halloween";
-// import Hannukahcard from "../../components/Hannukah";
-// import Christmascard from "../../components/Christmas";
-import Card from "../../components/Card";
-=======
 import Birthdaycard from "../../components/Birthday";
 import Halloweencard from "../../components/Halloween";
 import Hannukahcard from "../../components/Hannukah";
 import Christmascard from "../../components/Christmas";
 import Card from "../../components/Card/Card";
->>>>>>> 959833245ab7a033f4bc334e15ad26f0c59169df
 
 /**
  *
