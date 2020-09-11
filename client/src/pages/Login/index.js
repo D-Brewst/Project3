@@ -3,10 +3,16 @@ import { MDBContainer, MDBRow, MDBCol, MDBBtn } from "mdbreact";
 import { useGlobalContext } from "../../context/GlobalContext";
 import axios from "axios";
 import { LOGIN } from "../../context/actions";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  useLocation,
+} from "react-router-dom";
 
 const Login = () => {
   const [state, dispatch] = useGlobalContext();
-
+  let location = useLocation();
   const logemailRef = useRef();
   const logpasswordRef = useRef();
   //putting in local storage AND state
@@ -26,6 +32,7 @@ const Login = () => {
       type: LOGIN,
       user: data,
     });
+    location = "/members";
   };
 
   const handleSubmit = (e) => {
