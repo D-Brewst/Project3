@@ -1,5 +1,10 @@
 import React, { useEffect } from "react";
-import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 import Home from "./pages/Home/index";
 import Login from "./pages/Login/index";
 import Members from "./pages/Members/index";
@@ -42,7 +47,10 @@ function App() {
         <Router>
           <div className="logo">
             <MDBNavLink to="/">
-              <img width="50px" src={logo} alt="" />
+              <span>
+                {" "}
+                <img width="50px" src={logo} alt="" />{" "}
+              </span>
             </MDBNavLink>
           </div>
           <MDBNav className="nav-class justify-content-end" expand="md">
@@ -53,7 +61,7 @@ function App() {
               </MDBNavItem> */}
             <MDBNavItem>
               <MDBNavLink className="black-text" to="/members">
-                Members
+                <span>Members</span>
               </MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
@@ -86,7 +94,7 @@ function App() {
                 className="black-text justify-content-end"
                 to="/login"
               >
-                Login
+                <span> Login </span>
               </MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
@@ -94,7 +102,7 @@ function App() {
                 className="black-text justify-content-end"
                 to="/signup"
               >
-                Sign Up
+                <span> Sign Up </span>
               </MDBNavLink>
             </MDBNavItem>
           </MDBNav>
