@@ -32,7 +32,6 @@ const Login = () => {
       type: LOGIN,
       user: data,
     });
-    location = "/members";
   };
 
   const handleSubmit = (e) => {
