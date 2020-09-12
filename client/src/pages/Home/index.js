@@ -17,7 +17,7 @@ import {
 import "./style.css";
 
 import starlogo from "../../images/color-logo.svg";
-import samplecard from "../../images/samplecard.svg";
+import samplecard from "../../images/cardenv_1.svg";
 
 function Home() {
   return (
