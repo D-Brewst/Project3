@@ -12,16 +12,17 @@ import {
 const CardExample = ({ card, onClick }) => {
   const icons = {
     birthday: { icon: "birthday-cake", color: "" },
-    Christmas: { icon: "candy-cane", color: "" },
-    Halloween: { icon: "candy-cane", color: "" },
-    Hannukah: { icon: "candy-cane", color: "" },
+    Christmas: { icon: "gift", color: "" },
+    Halloween: { icon: "ghost", color: "" },
+    Hannukah: { icon: "menorah", color: "" },
   };
 
   return (
     <MDBRow className="mt-5 justify-content-center">
       <MDBCol md="4">
-        <MDBCard>
+        <MDBCard className="cardCon">
           <MDBIcon
+            size="4x"
             className="text-center"
             icon={
               icons[card.occasion] ? icons[card.occasion].icon : "candy-cane"
@@ -32,6 +33,7 @@ const CardExample = ({ card, onClick }) => {
             <MDBCardTitle>{card.occasion}</MDBCardTitle>
             <hr className="hr-light" />
             <MDBCardText className="white-text">{card.text}</MDBCardText>
+            <br /> <br />
             <h5 className="white-text" onClick={onClick}>
               GENERATE
               <MDBIcon fab icon="first-order-alt" className="ml-2" />
@@ -43,9 +45,9 @@ const CardExample = ({ card, onClick }) => {
   );
 };
 
-CardExample.defaultProps = {
-  card: {
-    occasion: "birthday",
-  },
-};
+// CardExample.defaultProps = {
+//   card: {
+//     occasion: "birthday",
+//   },
+// };
 export default CardExample;
