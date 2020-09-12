@@ -48,3 +48,17 @@ body {
   height: 100px;
   width: 100%;
 }
+
+.cardCon {
+  width: 400px;
+  height: 350px;
+  justify-items: center;
+}
+.card-con {
+  display: flex;
+  justify-items: center;
+}
+
+/* .negative-margin {
+  margin-left: -inherit;
+} */
