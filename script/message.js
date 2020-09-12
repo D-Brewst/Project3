@@ -102,13 +102,11 @@ const messageSeed = [
   },
   {
     occasion: "birthday",
-    text:
-      "Happy Birthday to you! Hope that you soend your day doing the things you love with the people you value most",
+    text: "Happy Birthday to you! Hope that you soend your day doing the things you love with the people you value most",
   },
   {
     occasion: "birthday",
-    text:
-      "Happy Birthday to my (insert relation), hope you have a wonderful day!",
+    text: "Happy Birthday to my (insert relation), hope you have a wonderful day!",
   },
   {
     occasion: "birthday",
@@ -140,13 +138,11 @@ const messageSeed = [
   },
   {
     occasion: "Hanukkah",
-    text:
-      "Dreidel, Dreidel, Dreidel I made you out of my clay. When it's dry and ready, oh dreidel I shall play! Happy Hanukkah!",
+    text: "Dreidel, Dreidel, Dreidel I made you out of my clay. When it's dry and ready, oh dreidel I shall play! Happy Hanukkah!",
   },
   {
     occasion: "Hanukkah",
-    text:
-      "It's a miracle that I ate eight donuts, I thought I could only eat one! Happy Hanukkah!",
+    text: "It's a miracle that I ate eight donuts, I thought I could only eat one! Happy Hanukkah!",
   },
   {
     occasion: "Hanukkah",
