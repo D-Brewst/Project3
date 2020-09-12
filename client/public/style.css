@@ -58,7 +58,9 @@ body {
   display: flex;
   justify-items: center;
 }
+/* 
+.negative-margin {
+  margin-left: -300px;
+  margin: 0 auto;
 
-/* .negative-margin {
-  margin-left: -inherit;
 } */

@@ -101,20 +101,13 @@ function Members() {
   return (
     <>
       {" "}
-      <div className="row">
-        <div className="col">
-          {state.selected && <Card card={state.selected} onClick={getRandom} />}
-        </div>
-        <div className="col">
-          {state.selected && <Card card={state.selected} onClick={getRandom} />}
-        </div>
-      </div>
-      <div className="row">
-        <div className="col">
-          {state.selected && <Card card={state.selected} onClick={getRandom} />}
-        </div>
-        <div className="col">
-          {state.selected && <Card card={state.selected} onClick={getRandom} />}
+      <div>
+        <div className="row">
+          <div className="col" style={{ margin: "0 auto" }}>
+            {state.selected && (
+              <Card card={state.selected} onClick={getRandom} />
+            )}
+          </div>
         </div>
       </div>
       <hr />
