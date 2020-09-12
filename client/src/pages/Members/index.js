@@ -68,7 +68,7 @@ import Halloweencard from "../../components/Halloween";
 import Hannukahcard from "../../components/Hannukah";
 import Christmascard from "../../components/Christmas";
 import Card from "../../components/Card/Card";
-
+import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 /**
  *
  * @param {any[]} arr Array to select random item from
@@ -100,10 +100,24 @@ function Members() {
     });
   return (
     <>
-      {state.selected && <Card card={state.selected} onClick={getRandom} />}
-
+      {" "}
+      <div className="row">
+        <div className="col">
+          {state.selected && <Card card={state.selected} onClick={getRandom} />}
+        </div>
+        <div className="col">
+          {state.selected && <Card card={state.selected} onClick={getRandom} />}
+        </div>
+      </div>
+      <div className="row">
+        <div className="col">
+          {state.selected && <Card card={state.selected} onClick={getRandom} />}
+        </div>
+        <div className="col">
+          {state.selected && <Card card={state.selected} onClick={getRandom} />}
+        </div>
+      </div>
       <hr />
-
       {/* {state.messages.map((card, i) => (
         <Card key={i + "card"} card={card} />
       ))} */}
