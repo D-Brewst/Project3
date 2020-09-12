@@ -1,5 +1,10 @@
-#sample{
-    margin-top: 75px !important;
-    padding-left: 10% !important;
-    padding-right: 10% !important;
+#samples {
+  margin-top: 60px !important;
+  padding-left: 10% !important;
+  padding-right: 10% !important;
+}
+#head {
+  text-align: center !important;
+  font-size: 1.65rem !important;
+  font-weight: 400 !important;
 }
