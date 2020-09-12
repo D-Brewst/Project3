@@ -69,6 +69,10 @@ import Hannukahcard from "../../components/Hannukah";
 import Christmascard from "../../components/Christmas";
 import Card from "../../components/Card/Card";
 import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
+import ChristmasButton from "../../components/ChrismasButton";
+import HanukkahButton from "../../components/HanukkahButton";
+import HalloweenButton from "../../components/HalloweenButton";
+import BirthdayButton from "../../components/BirthdayButton";
 /**
  *
  * @param {any[]} arr Array to select random item from
@@ -108,6 +112,12 @@ function Members() {
               <Card card={state.selected} onClick={getRandom} />
             )}
           </div>
+        </div>
+        <div id="">
+          <ChristmasButton />
+          <HanukkahButton />
+          <HalloweenButton />
+          <BirthdayButton />
         </div>
       </div>
       <hr />
