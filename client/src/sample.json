@@ -1,0 +1,397 @@
+[
+    {
+      "id": 1,
+      "occasion": "birthday",
+      "text": "Happy Birthday to you! Hope that you soend your day doing the things you love with the people you value most"
+    },
+    {
+      "id": 2,
+      "occasion": "birthday",
+      "text":
+        "Happy Birthday to my (insert relation), hope you have a wonderful day!"
+    },
+    {
+      "id": 3,
+      "occasion": "birthday",
+      "text": "Another trip around the sun, Happy Birthday!"
+    },
+    {
+      "id": 4,
+      "occasion": "birthday",
+      "text": "Happy Birthday! Another fabulous year in the books!"
+    },
+    {
+      "id": 5,
+      "occasion": "birthday",
+      "text": "Happy Birthday to you! Hope that you spend your day doing the things you love with the people you value most"
+    },
+    {
+      "id": 6,
+      "occasion": "birthday",
+      "text": "Happy Birthday to my (insert relation), hope you have a wonderful day!"
+    },
+    {
+      "id": 7,
+      "occasion": "birthday",
+      "text": "Another trip around the sun, Happy Birthday!"
+    },
+    {
+      "id": 8,
+      "occasion": "birthday",
+      "text": "Happy Birthday! Another fabulous year in the books! "
+    },
+    {
+      "id": 9,
+      "occasion": "birthday",
+      "text": "Happy Birthday to you! Hope that you spend your day doing the things you love with the people you value most"
+    },
+    {
+      "id": 10,
+      "occasion": "birthday",
+      "text":
+        "Happy Birthday to my (insert relation), hope you have a wonderful day!"
+    },
+    {
+      "id": 11,
+      "occasion": "birthday",
+      "text": "Another trip around the sun, Happy Birthday!"
+    },
+    {
+      "id": 12,
+      "occasion": "birthday",
+      "text": "Happy Birthday! Another fabulous year in the books! "
+    },
+    {
+      "id": 13,
+      "occasion": "birthday",
+      "text":
+        "Happy Birthday to you! Hope that you soend your day doing the things you love with the people you value most"
+    },
+    {
+      "id": 14,
+      "occasion": "birthday",
+      "text":
+        "Happy Birthday to my (insert relation), hope you have a wonderful day!"
+    },
+    {
+      "id": 15,
+      "occasion": "birthday",
+      "text": "Another trip around the sun, Happy Birthday!"
+    },
+    {
+      "id": 16,
+      "occasion": "birthday",
+      "text": "Happy Birthday! Another fabulous year in the books! "
+    },
+    {
+      "id": 17,
+      "occasion": "birthday",
+      "text":
+        "Happy Birthday to you! Hope that you soend your day doing the things you love with the people you value most"
+    },
+    {
+      "id": 18,
+      "occasion": "birthday",
+      "text":
+        "Happy Birthday to my (insert relation), hope you have a wonderful day!"
+    },
+    {
+      "id": 19,
+      "occasion": "birthday",
+      "text": "Another trip around the sun, Happy Birthday!"
+    },
+    {
+      "id": 20,
+      "occasion": "birthday",
+      "text": "Happy Birthday! Another fabulous year in the books! "
+    },
+    {
+      "id": 21,
+      "occasion": "birthday",
+      "text": "Happy Birthday to you! Hope that you soend your day doing the things you love with the people you value most"
+    },
+    {
+      "id": 22,
+      "occasion": "birthday",
+      "text": "Happy Birthday to my (insert relation), hope you have a wonderful day!"
+    },
+    {
+      "id": 23,
+      "occasion": "birthday",
+      "text": "Another trip around the sun, Happy Birthday!"
+    },
+    {
+      "id": 24,
+      "occasion": "birthday",
+      "text": "Happy Birthday! Another fabulous year in the books! "
+    },
+  
+    {
+      "id": 25,
+      "occasion": "Hanukkah",
+      "text": "I Love You a Latke!"
+    },
+    {
+      "id": 26,
+      "occasion": "Hanukkah",
+      "text": "May Your Menorah Burn Brighter than your Latkes!"
+    },
+    {
+      "id": 27,
+      "occasion": "Hanukkah",
+      "text": "Keep the 'Han' in HAN-ukkah!"
+    },
+    {
+      "id": 28,
+      "occasion": "Hanukkah",
+      "text": "Happy Hanukkah! C'mon baby light my fire!"
+    },
+    {
+      "id": 29,
+      "occasion": "Hanukkah",
+      "text": "Dreidel, Dreidel, Dreidel I made you out of my clay. When it's dry and ready, oh dreidel I shall play! Happy Hanukkah!"
+    },
+    {
+      "id": 30,
+      "occasion": "Hanukkah",
+      "text": "It's a miracle that I ate eight donuts, I thought I could only eat one! Happy Hanukkah!"
+    },
+    {
+      "id": 31,
+      "occasion": "Hanukkah",
+      "text": "Happy Hanuk-kat!"
+    },
+    {
+      "id": 32,
+      "occasion": "Hanukkah",
+      "text": "Happy Challah Days!"
+    },
+    {
+      "id": 33,
+      "occasion": "Hanukkah",
+      "text": "You're not dry and ready?!?! Happy Hanukkah!"
+    },
+    {
+      "id": 34,
+      "occasion": "Hanukkah",
+      "text": "Seasons Eating, to you and your family! Happy Hanukkah!"
+    },
+    {
+      "id": 35,
+      "occasion": "Hanukkah",
+      "text": "More Gelt, Less Guilt! Happy Hanukkah!"
+    },
+    {
+      "id": 36,
+      "occasion": "Hanukkah",
+      "text": "Deck the Hall with boughs and challahs! Happy Hanukkah!"
+    },
+    {
+      "id": 37,
+      "occasion": "Hanukkah",
+      "text":
+        "My secret to a happy, stress-free Christmas... I'm Jewish! Happy Hanukkah!"
+    },
+    {
+      "id": 38,
+      "occasion": "Hanukkah",
+      "text":
+        "I want a Christmas tree for Hanukkah! Happy Hanukkah!"
+    },
+    {
+      "id": 39,
+      "occasion": "Hanukkah",
+      "text": "Every Hanukkah we eat fried food, we gamble and light things on fire. It's like we live in the south! Happy Hannukah!"
+    },
+    {
+      "id": 40,
+      "occasion": "Hanukkah",
+      "text": "Fo-gelt about it! Happy Hannukah!"
+    },
+    {
+      "id": 41,
+      "occasion": "Hanukkah",
+      "text": "Gelt in your mouth, not in your hands! Happy Hanukkah!"
+    },
+    {
+      "id": 42,
+      "occasion": "Hanukkah",
+      "text": "If your cell phone was on 10%, but lasted for 8 straight days... Now you know what Hanukkah is all about!"
+    },
+    {
+      "id": 43,
+      "occasion": "Hanukkah",
+      "text": "Drop it like it's top! Happy Hanukkah!"
+    },
+    {
+      "id": 44,
+      "occasion": "Hanukkah",
+      "text": "Hanukkah Mazel Toes to you and your family!"
+    },
+    {
+      "id": 45,
+      "occasion": "Hanukkah",
+      "text":
+        "You spin me right round! Happy Hanukkah!"
+    },
+    {
+      "id": 46,
+      "occasion": "Hanukkah",
+      "text":
+        "Gimmel all your lovin'! Happy Hanukkah!"
+    },
+    {
+      "id": 47,
+      "occasion": "Hanukkah",
+      "text": "Hope your Hanukkah isn't dreidfull!"
+    },
+    {
+      "id": 48,
+      "occasion": "Hanukkah",
+      "text": "Happy Hanukkah from Dr. Dre-idel!"
+    },
+  
+    {
+      "id": 49,
+      "occasion": "Christmas",
+      "text":"I hope Santa leaves you a ton of presents, but I hope the reindeers do not leave behind any ~presents~ on your lawn! Merry Christmas!"
+    },
+    {
+      "id": 50,
+      "occasion": "Christmas",
+      "text": "Christmas is Claus for celebration! Merry X-mas!"
+    },
+    {
+      "id": 51,
+      "occasion": "Christmas",
+      "text": "Santa ho ho hopes you've been good this year. Merry Christmas!"
+    },
+    {
+      "id": 52,
+      "occasion": "Christmas",
+      "text":"I'm glad to have people like you in my life to send Christmas cards. I am truly blessed this Christmas!"
+    },
+    {
+      "id": 53,
+      "occasion": "Christmas",
+      "text": "It's all fun and games 'till Santa checks the Naughty List."
+    },
+    {
+      "id": 54,
+      "occasion": "Christmas",
+      "text": "Have a very Merry Christmas and a Happy New Year!"
+    },
+    {
+      "id": 55,
+      "occasion": "Christmas",
+      "text":
+        "May your fun be large and bills be small this year. Merry Christmas!"
+    },
+    {
+      "id": 56,
+      "occasion": "Christmas",
+      "text":
+        "Santa saw your Facebook – you're getting a dictionary this year! Merry Xmas!"
+    },
+    {
+      "id": 57,
+      "occasion": "Christmas",
+      "text": "All I want for Christmas is you! Merry Christmas!"
+    },
+    {
+      "id": 58,
+      "occasion": "Christmas",
+      "text":
+        "I hope Santa leaves you a ton of presents, but I hope the reindeers do not leave behind any ~presents~ on your lawn! Merry Christmas!"
+    },
+    {
+      "id": 59,
+      "occasion": "Christmas",
+      "text": "Christmas is Claus for celebration! Merry X-mas!"
+    },
+    {
+      "id": 60,
+      "occasion": "Christmas",
+      "text": "Santa ho ho hopes you've been good this year. Merry Christmas!"
+    },
+    {
+      "id": 61,
+      "occasion": "Christmas",
+      "text":
+        "I'm glad to have people like you in my life to send Christmas cards. I am truly blessed this Christmas!"
+    },
+    {
+      "id": 62,
+      "occasion": "Christmas",
+      "text": "It's all fun and games 'till Santa checks the Naughty List."
+    },
+    {
+      "id": 63,
+      "occasion": "Christmas",
+      "text": "Have a very Merry Christmas and a Happy New Year!"
+    },
+    {
+      "id": 64,
+      "occasion": "Christmas",
+      "text":
+        "May your fun be large and bills be small this year. Merry Christmas!"
+    },
+    {
+      "id": 65,
+      "occasion": "Christmas",
+      "text":
+        "Santa saw your Facebook – you're getting a dictionary this year! Merry Xmas!"
+    },
+    {
+      "id": 66,
+      "occasion": "Christmas",
+      "text": "All I want for Christmas is you! Merry Christmas!"
+    },
+    {
+      "id": 67,
+      "occasion": "Christmas",
+      "text":"I hope Santa leaves you a ton of presents, but I hope the reindeers do not leave behind any ~presents~ on your lawn! Merry Christmas!"
+    },
+    {
+      "id": 68,
+      "occasion": "Christmas",
+      "text": "Christmas is Claus for celebration! Merry X-mas!"
+    },
+    {
+      "id": 69,
+      "occasion": "Christmas",
+      "text": "Santa ho ho hopes you've been good this year. Merry Christmas!"
+    },
+    {
+      "id": 70,
+      "occasion": "Christmas",
+      "text":
+        "I'm glad to have people like you in my life to send Christmas cards. I am truly blessed this Christmas!"
+    },
+    {
+      "id": 71,
+      "occasion": "Christmas",
+      "text": "It's all fun and games 'till Santa checks the Naughty List."
+    },
+    {
+      "id": 72,
+      "occasion": "Christmas",
+      "text": "Have a very Merry Christmas and a Happy New Year!"
+    },
+    {
+      "id": 73,
+      "occasion": "Christmas",
+      "text":
+        "May your fun be large and bills be small this year. Merry Christmas!"
+    },
+    {
+      "id": 74,
+      "occasion": "Christmas",
+      "text":"Santa saw your Facebook – you're getting a dictionary this year! Merry Xmas!"
+    },
+    {
+      "id": 75,
+      "occasion": "Christmas",
+      "text": "All I want for Christmas is you! Merry Christmas!"
+    }
+]
