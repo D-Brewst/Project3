@@ -234,7 +234,7 @@ const messageSeed = [
   },
   {
     occasion: "Valentine",
-    text: "",
+    text: "I love you soooooo much. Happy Valentine's Day.",
   },
   {
     occasion: "Valentine",
