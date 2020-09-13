@@ -44,7 +44,7 @@ function Home() {
                 <i className="px-2 fa-lg li-ic" className="fas fa-gift"></i>
               </i>
               <i className="px-2 fa-lg li-ic">
-                <i className="fas fa-ghost"></i>
+                <i className="fas fa-heart"></i>
               </i>
               <i className="px-2 fa-lg li-ic">
                 <i className="fas fa-birthday-cake"></i>
