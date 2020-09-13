@@ -16,8 +16,8 @@ function SampleMessages() {
   });
   return (
     <div id="samples">
-      <MDBTable>
-        <MDBTableHead id="head">Birthday</MDBTableHead>
+      <MDBTableHead id="head">Birthday</MDBTableHead>
+      <MDBTable id="table">
         <MDBTableBody>
           <tr>
             {birthdayMessages.map((sample) => {
@@ -32,9 +32,8 @@ function SampleMessages() {
           </tr>
         </MDBTableBody>
       </MDBTable>
-
-      <MDBTable>
-        <MDBTableHead id="head">Christmas</MDBTableHead>
+      <MDBTableHead id="head">Christmas</MDBTableHead>
+      <MDBTable id="table">
         <MDBTableBody>
           <tr>
             {christmasMessages.map((sample) => {
@@ -49,9 +48,8 @@ function SampleMessages() {
           </tr>
         </MDBTableBody>
       </MDBTable>
-
-      <MDBTable>
-        <MDBTableHead id="head">Hanukkah</MDBTableHead>
+      <MDBTableHead id="head">Hanukkah</MDBTableHead>
+      <MDBTable id="table">
         <MDBTableBody>
           <tr>
             {hanukkahMessages.map((sample) => {
