@@ -69,10 +69,14 @@ import Hannukahcard from "../../components/Hannukah";
 import Christmascard from "../../components/Christmas";
 import Card from "../../components/Card/Card";
 import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
-import ChristmasButton from "../../components/ChrismasButton";
-import HanukkahButton from "../../components/HanukkahButton";
-import ValentineButton from "../../components/ValentineButton";
-import BirthdayButton from "../../components/BirthdayButton";
+
+
+import CardButton from "../../components/CardButton";
+// import ChristmasButton from "../../components/ChrismasButton";
+// import HanukkahButton from "../../components/HanukkahButton";
+// import ValentineButton from "../../components/ValentineButton";
+// import BirthdayButton from "../../components/BirthdayButton";
+
 /**
  *
  * @param {any[]} arr Array to select random item from
@@ -102,66 +106,69 @@ function Members() {
       ...state,
       selected: state.messages?.length ? randArrayEl(state.messages) : {},
     });
-  
-  const birthdayMessages = state.messages.filter((messages) => {
-    return messages.occasion.includes("Birthday");
-  });
-  const valentineMessages = state.messages.filter((messages) => {
-    return messages.occasion.includes("Valentine");
-  });
-  const hanukkahMessages = state.messages.filter((messages) => {
-    return messages.occasion.includes("Hanukkah");
-  });
-  const christmasMessages = state.messages.filter((messages) => {
-    return messages.occasion.includes("Christmas");
-  });
-  
-  const getRandomChristmas = () =>
-  setState({
-    ...state,
-    selected: christmasMessages?.length ? randArrayEl(christmasMessages) : {},
-  });
 
-  const getRandomHanukkah = () =>
-    setState({
-      ...state,
-      selected: hanukkahMessages?.length ? randArrayEl(hanukkahMessages) : {},
-    });
-  
-  const getRandomValentine = () =>
-    setState({
-      ...state,
-      selected: valentineMessages?.length ? randArrayEl(valentineMessages) : {},
-    });
-  
-  const getRandomBirthday = () =>
-    setState({
-      ...state,
-      selected: birthdayMessages?.length ? randArrayEl(birthdayMessages) : {},
-    });
+  // const valentineMessages = state.messages.filter((messages) => {
+  //   return messages.occasion.includes("Valentine");
+  // });
+  // const hanukkahMessages = state.messages.filter((messages) => {
+  //   return messages.occasion.includes("Hanukkah");
+  // });
+  // const christmasMessages = state.messages.filter((messages) => {
+  //   return messages.occasion.includes("Christmas");
+  // });
+
+  /**
+   * 
+   * @param {string} occasion What type of occasion you'd like to validate
+   * @returns {boolean} Whether or not occasion exists in messages
+   */
+  const checkMessages = (occasion) => state.messages.some(message => message.occasion === occasion)
+  const filterMessages = (occasion) => state.messages.filter(messages => messages.occasion === occasion);
+  const getRandomMessage = (occasion) => setState({
+    ...state,
+    selected: checkMessages(occasion) ? randArrayEl(filterMessages(occasion)) : {}
+  })
+
+  // const getRandomChristmas = () =>
+  //   setState({
+  //     ...state,
+  //     selected: christmasMessages?.length ? randArrayEl(christmasMessages) : {},
+  //   });
+
+  // const getRandomHanukkah = () =>
+  //   setState({
+  //     ...state,
+  //     selected: hanukkahMessages?.length ? randArrayEl(hanukkahMessages) : {},
+  //   });
+
+  // const getRandomValentine = () =>
+  //   setState({
+  //     ...state,
+  //     selected: valentineMessages?.length ? randArrayEl(valentineMessages) : {},
+  //   });
+
+  // const getRandomBirthday = () =>
+  //   setState({
+  //     ...state,
+  //     selected: birthdayMessages?.length ? randArrayEl(birthdayMessages) : {},
+  //   });
 
   return (
     <>
-      {" "}
       <div>
-        <div className="row">
-          <div className="col" style={{ margin: "0 auto" }}>
-            {state.selected && (
-              <Card card={state.selected} onClick={getRandom} />
-            )}
-          </div>
+        <div className="d-flex w-100 justify-content-center">
+          {state.selected && (
+            <Card card={state.selected} onClick={getRandom} />
+          )}
         </div>
-        <div id="">
-          <ChristmasButton onClick={getRandomChristmas} />
-          <HanukkahButton onClick={getRandomHanukkah} />
-          <ValentineButton onClick={getRandomValentine} />
-          <BirthdayButton onClick={getRandomBirthday} />
+        <div className="d-flex w-100 justify-content-center">
+          <CardButton text="Christmas" genRandom={getRandomMessage} />
+          <CardButton text="Hanukkah" genRandom={getRandomMessage} />
+          <CardButton text="Valentine" genRandom={getRandomMessage} />
+          <CardButton text="Birthday" genRandom={getRandomMessage} />
         </div>
       </div>
       <hr />
-      {/* {state.messages.map((card, i) => (
-        <Card key={i + "card"} card={card} />
-      ))} */}
     </>
   );
 }
