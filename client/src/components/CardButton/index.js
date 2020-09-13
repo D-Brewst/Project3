@@ -1,19 +1,18 @@
 import React from "react";
 import { MDBBtn } from "mdbreact";
 
-const ChristamsButton = (props) => {
+const CardButton = (props) => {
   return (
-    <>
+    <div className="">
       <MDBBtn
-        onClick={props.onClick}
+        onClick={() => props.genRandom(props.text)}
         className={`card-btn ${props["data-value"]}`}
-        {...props}
         gradient="red"
       >
-        Christams
+        {props.text}
       </MDBBtn>
-    </>
+    </div>
   );
 };
 
-export default ChristamsButton;
+export default CardButton;
