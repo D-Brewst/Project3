@@ -29,7 +29,12 @@ const CardExample = ({ card, onClick }) => {
             }
           />
           <MDBCardBody className="white-text rounded-bottom elegant-color">
-            <MDBIcon icon="share-alt" className="white-text" />
+            <MDBIcon
+              icon="share-alt"
+              className="share"
+              id="share"
+              onClick={onClick}
+            />
             <MDBCardTitle>{card.occasion}</MDBCardTitle>
             <hr className="hr-light" />
             <MDBCardText className="white-text">{card.text}</MDBCardText>
