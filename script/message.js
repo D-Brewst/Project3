@@ -11,109 +11,109 @@ const messageSeed = [
   // Birthday
   //============================================================================
   {
-    occasion: "birthday",
+    occasion: "Birthday",
     text:
       "Happy Birthday to you! Hope that you soend your day doing the things you love with the people you value most",
   },
   {
-    occasion: "birthday",
+    occasion: "Birthday",
     text:
       "Happy Birthday to my (insert relation), hope you have a wonderful day!",
   },
   {
-    occasion: "birthday",
+    occasion: "Birthday",
     text: "Another trip around the sun, Happy Birthday!",
   },
   {
-    occasion: "birthday",
+    occasion: "Birthday",
     text: "Happy Birthday! Another fabulous year in the books! ",
   },
   {
-    occasion: "birthday",
+    occasion: "Birthday",
     text:
       "Happy Birthday to you! Hope that you soend your day doing the things you love with the people you value most",
   },
   {
-    occasion: "birthday",
+    occasion: "Birthday",
     text:
       "Happy Birthday to my (insert relation), hope you have a wonderful day!",
   },
   {
-    occasion: "birthday",
+    occasion: "Birthday",
     text: "Another trip around the sun, Happy Birthday!",
   },
   {
-    occasion: "birthday",
+    occasion: "Birthday",
     text: "Happy Birthday! Another fabulous year in the books! ",
   },
   {
-    occasion: "birthday",
+    occasion: "Birthday",
     text:
       "Happy Birthday to you! Hope that you soend your day doing the things you love with the people you value most",
   },
   {
-    occasion: "birthday",
+    occasion: "Birthday",
     text:
       "Happy Birthday to my (insert relation), hope you have a wonderful day!",
   },
   {
-    occasion: "birthday",
+    occasion: "Birthday",
     text: "Another trip around the sun, Happy Birthday!",
   },
   {
-    occasion: "birthday",
+    occasion: "Birthday",
     text: "Happy Birthday! Another fabulous year in the books! ",
   },
   {
-    occasion: "birthday",
+    occasion: "Birthday",
     text:
       "Happy Birthday to you! Hope that you soend your day doing the things you love with the people you value most",
   },
   {
-    occasion: "birthday",
+    occasion: "Birthday",
     text:
       "Happy Birthday to my (insert relation), hope you have a wonderful day!",
   },
   {
-    occasion: "birthday",
+    occasion: "Birthday",
     text: "Another trip around the sun, Happy Birthday!",
   },
   {
-    occasion: "birthday",
+    occasion: "Birthday",
     text: "Happy Birthday! Another fabulous year in the books! ",
   },
   {
-    occasion: "birthday",
+    occasion: "Birthday",
     text:
       "Happy Birthday to you! Hope that you soend your day doing the things you love with the people you value most",
   },
   {
-    occasion: "birthday",
+    occasion: "Birthday",
     text:
       "Happy Birthday to my (insert relation), hope you have a wonderful day!",
   },
   {
-    occasion: "birthday",
+    occasion: "Birthday",
     text: "Another trip around the sun, Happy Birthday!",
   },
   {
-    occasion: "birthday",
+    occasion: "Birthday",
     text: "Happy Birthday! Another fabulous year in the books! ",
   },
   {
-    occasion: "birthday",
+    occasion: "Birthday",
     text: "Happy Birthday to you! Hope that you soend your day doing the things you love with the people you value most",
   },
   {
-    occasion: "birthday",
+    occasion: "Birthday",
     text: "Happy Birthday to my (insert relation), hope you have a wonderful day!",
   },
   {
-    occasion: "birthday",
+    occasion: "Birthday",
     text: "Another trip around the sun, Happy Birthday!",
   },
   {
-    occasion: "birthday",
+    occasion: "Birthday",
     text: "Happy Birthday! Another fabulous year in the books! ",
   },
 
@@ -222,127 +222,125 @@ const messageSeed = [
   },
 
   //============================================================================
-  // Halloween 
+  // Valentine 
   //============================================================================
   {
-    occasion: "Halloween",
+    occasion: "Valentine",
+    text: "Be mine. Happy Valentine's day.",
+  },
+  {
+    occasion: "Valentine",
+    text: "You're the best girlfriend that a man can ask for. Happy Valentine's Day.",
+  },
+  {
+    occasion: "Valentine",
+    text: "",
+  },
+  {
+    occasion: "Valentine",
+    text: "Something possessed me to send you a card. Happy Valentine!",
+  },
+  {
+    occasion: "Valentine",
     text:
-      "One witch told another witch, 'I want one of those new computers that has a spell checker.'Happy Halloween!",
+      "Want to hear some skeleton puns? They're very humerus! Happy Valentine!",
   },
   {
-    occasion: "Halloween",
+    occasion: "Valentine",
+    text: "I have a few vampire puns, but they suck. Happy Valentine!",
+  },
+  {
+    occasion: "Valentine",
     text:
-      "I'm glad to have you as my ghoul-friend this Halloween. Happy Halloween (for a girlfriend)!.",
+      "Ghosts make the best cheerleaders. They have lots of spirit! Happy Valentine!",
   },
   {
-    occasion: "Halloween",
-    text: "From my crypt to yours. Happy Halloween!",
+    occasion: "Valentine",
+    text: "Your costume is so realistic, it's un-candy! Happy Valentine!",
   },
   {
-    occasion: "Halloween",
-    text: "Something possessed me to send you a card. Happy Halloween!",
+    occasion: "Valentine",
+    text: "Oh my gourdness, it's finally Valentine!",
   },
   {
-    occasion: "Halloween",
+    occasion: "Valentine",
     text:
-      "Want to hear some skeleton puns? They're very humerus! Happy Halloween!",
+      "One witch told another witch, 'I want one of those new computers that has a spell checker.'Happy Valentine!",
   },
   {
-    occasion: "Halloween",
-    text: "I have a few vampire puns, but they suck. Happy Halloween!",
-  },
-  {
-    occasion: "Halloween",
+    occasion: "Valentine",
     text:
-      "Ghosts make the best cheerleaders. They have lots of spirit! Happy Halloween!",
+      "I'm glad to have you as my ghoul-friend this Valentine. Happy Valentine (for a girlfriend)!.",
   },
   {
-    occasion: "Halloween",
-    text: "Your costume is so realistic, it's un-candy! Happy Halloween!",
+    occasion: "Valentine",
+    text: "From my crypt to yours. Happy Valentine!",
   },
   {
-    occasion: "Halloween",
-    text: "Oh my gourdness, it's finally Halloween!",
+    occasion: "Valentine",
+    text: "Something possessed me to send you a card. Happy Valentine!",
   },
   {
-    occasion: "Halloween",
+    occasion: "Valentine",
     text:
-      "One witch told another witch, 'I want one of those new computers that has a spell checker.'Happy Halloween!",
+      "Want to hear some skeleton puns? They're very humerus! Happy Valentine!",
   },
   {
-    occasion: "Halloween",
+    occasion: "Valentine",
+    text: "I have a few vampire puns, but they suck. Happy Valentine!",
+  },
+  {
+    occasion: "Valentine",
     text:
-      "I'm glad to have you as my ghoul-friend this Halloween. Happy Halloween (for a girlfriend)!.",
+      "Ghosts make the best cheerleaders. They have lots of spirit! Happy Valentine!",
   },
   {
-    occasion: "Halloween",
-    text: "From my crypt to yours. Happy Halloween!",
+    occasion: "Valentine",
+    text: "Your costume is so realistic, it's un-candy! Happy Valentine!",
   },
   {
-    occasion: "Halloween",
-    text: "Something possessed me to send you a card. Happy Halloween!",
+    occasion: "Valentine",
+    text: "Oh my gourdness, it's finally Valentine!",
   },
   {
-    occasion: "Halloween",
+    occasion: "Valentine",
     text:
-      "Want to hear some skeleton puns? They're very humerus! Happy Halloween!",
+      "One witch told another witch, 'I want one of those new computers that has a spell checker.'Happy Valentine!",
   },
   {
-    occasion: "Halloween",
-    text: "I have a few vampire puns, but they suck. Happy Halloween!",
-  },
-  {
-    occasion: "Halloween",
+    occasion: "Valentine",
     text:
-      "Ghosts make the best cheerleaders. They have lots of spirit! Happy Halloween!",
+      "I'm glad to have you as my ghoul-friend this Valentine. Happy Valentine (for a girlfriend)!.",
   },
   {
-    occasion: "Halloween",
-    text: "Your costume is so realistic, it's un-candy! Happy Halloween!",
+    occasion: "Valentine",
+    text: "From my crypt to yours. Happy Valentine!",
   },
   {
-    occasion: "Halloween",
-    text: "Oh my gourdness, it's finally Halloween!",
+    occasion: "Valentine",
+    text: "Something possessed me to send you a card. Happy Valentine!",
   },
   {
-    occasion: "Halloween",
+    occasion: "Valentine",
     text:
-      "One witch told another witch, 'I want one of those new computers that has a spell checker.'Happy Halloween!",
+      "Want to hear some skeleton puns? They're very humerus! Happy Valentine!",
   },
   {
-    occasion: "Halloween",
+    occasion: "Valentine",
+    text: "I have a few vampire puns, but they suck. Happy Valentine!",
+  },
+  {
+    occasion: "Valentine",
     text:
-      "I'm glad to have you as my ghoul-friend this Halloween. Happy Halloween (for a girlfriend)!.",
+      "Ghosts make the best cheerleaders. They have lots of spirit! Happy Valentine!",
   },
   {
-    occasion: "Halloween",
-    text: "From my crypt to yours. Happy Halloween!",
+    occasion: "Valentine",
+    text: "Your costume is so realistic, it's un-candy! Happy Valentine!",
   },
   {
-    occasion: "Halloween",
-    text: "Something possessed me to send you a card. Happy Halloween!",
-  },
-  {
-    occasion: "Halloween",
-    text:
-      "Want to hear some skeleton puns? They're very humerus! Happy Halloween!",
-  },
-  {
-    occasion: "Halloween",
-    text: "I have a few vampire puns, but they suck. Happy Halloween!",
-  },
-  {
-    occasion: "Halloween",
-    text:
-      "Ghosts make the best cheerleaders. They have lots of spirit! Happy Halloween!",
-  },
-  {
-    occasion: "Halloween",
-    text: "Your costume is so realistic, it's un-candy! Happy Halloween!",
-  },
-  {
-    occasion: "Halloween",
-    text: "Oh my gourdness, it's finally Halloween!",
+    occasion: "Valentine",
+    text: "Oh my gourdness, it's finally Valentine!",
   },
 
   //============================================================================

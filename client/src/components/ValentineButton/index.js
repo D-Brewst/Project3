@@ -1,7 +1,7 @@
 import React from "react";
 import { MDBBtn } from "mdbreact";
 
-const HalloweenButton = (props) => {
+const ValentineButton = (props) => {
   return (
     <>
       <MDBBtn
@@ -9,9 +9,11 @@ const HalloweenButton = (props) => {
         className={`card-btn ${props["data-value"]}`}
         {...props}
         gradient="red"
-      ></MDBBtn>
+      >
+        Valentine
+      </MDBBtn>
     </>
   );
 };
 
-export default HalloweenButton;
+export default ValentineButton;

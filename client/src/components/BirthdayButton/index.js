@@ -9,7 +9,9 @@ const BirthdayButton = (props) => {
         className={`card-btn ${props["data-value"]}`}
         {...props}
         gradient="red"
-      ></MDBBtn>
+      >
+        Birthday
+      </MDBBtn>
     </>
   );
 };

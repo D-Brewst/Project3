@@ -13,13 +13,15 @@ import {
   MDBView,
   MDBIcon,
 } from "mdbreact";
-
+import { useHistory } from "react-router-dom";
 import "./style.css";
 
 import starlogo from "../../images/color-logo.svg";
 import samplecard from "../../images/cardenv_1.svg";
 
 function Home() {
+  const history = useHistory();
+  const redirect = () => history.push("/signup");
   return (
     <div>
       <MDBContainer className="mt-5 justify-content-center">
@@ -52,7 +54,7 @@ function Home() {
               </i>
               <br /> <br />
               <p className="lead">
-                <MDBBtn color="black">Sign Up</MDBBtn>
+                <MDBBtn color="black" onClick={redirect}>Sign Up</MDBBtn>
               </p>
             </div>
           </MDBCol>

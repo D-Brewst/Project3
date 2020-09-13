@@ -11,10 +11,10 @@ import {
 } from "mdbreact";
 const CardExample = ({ card, onClick }) => {
   const icons = {
-    birthday: { icon: "birthday-cake", color: "" },
+    Birthday: { icon: "birthday-cake", color: "" },
     Christmas: { icon: "gift", color: "" },
-    Halloween: { icon: "ghost", color: "" },
-    Hannukah: { icon: "menorah", color: "" },
+    Valentine: { icon: "heart", color: "" },
+    Hanukkah: { icon: "menorah", color: "" },
   };
 
   return (

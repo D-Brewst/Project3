@@ -9,7 +9,7 @@ import {
   MDBCol,
   MDBIcon,
 } from "mdbreact";
-const Halloween = () => {
+const Valentine = () => {
   return (
     <div style={{ width: "100%" }}>
       {/* <MDBRow className="mt-5 justify-content-center"> */}
@@ -20,7 +20,7 @@ const Halloween = () => {
             <a href="#!" className="activator waves-effect waves-light mr-4">
               <MDBIcon icon="share-alt" className="white-text" />
             </a>
-            <MDBCardTitle>HALLOWEEN</MDBCardTitle>
+            <MDBCardTitle>My Valentine</MDBCardTitle>
             <hr className="hr-light" />
             <MDBCardText className="white-text">
               Some quick example text to build on the card title and make up the
@@ -39,4 +39,4 @@ const Halloween = () => {
     </div>
   );
 };
-export default Halloween;
+export default Valentine;
