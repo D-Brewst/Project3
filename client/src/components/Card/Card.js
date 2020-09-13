@@ -1,49 +1,47 @@
 import React from "react";
-import {
-  MDBCard,
-  MDBCardBody,
-  // MDBCardImage,
-  MDBCardTitle,
-  MDBCardText,
-  MDBRow,
-  MDBCol,
-  MDBIcon,
-} from "mdbreact";
+import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBIcon, MDBCol, MDBView, MDBCardImage, MDBBtn } from "mdbreact";
 const CardExample = ({ card, onClick }) => {
   const icons = {
     Birthday: { icon: "birthday-cake", color: "" },
-    Christmas: { icon: "gift", color: "" },
+    Christmas: { icon: "tree", color: "" },
     Valentine: { icon: "heart", color: "" },
     Hanukkah: { icon: "menorah", color: "" },
   };
 
+
   return (
-    <MDBCard className="cardCon my-3">
-      <MDBIcon
-        size="4x"
-        className="text-center"
-        icon={
-          icons[card.occasion] ? icons[card.occasion].icon : "candy-cane"
-        }
-      />
-      <MDBCardBody className="white-text rounded-bottom elegant-color">
-        <MDBIcon
-          icon="share-alt"
-          className="share"
-          id="share"
-        />
-        <MDBCardTitle>{card.occasion}</MDBCardTitle>
-        <hr className="hr-light" />
-        <MDBCardText className="white-text">{card.text}</MDBCardText>
-        <br /> <br />
-        <h5 className="white-text" onClick={onClick}>
-          GENERATE
-              <MDBIcon fab icon="first-order-alt" className="ml-2" />
-        </h5>
-      </MDBCardBody>
-    </MDBCard>
+    <MDBCol md='4'>
+      <MDBCard narrow>
+        <MDBView cascade>
+          <MDBCardImage
+            hover
+            overlay='white-slight'
+            className='card-img-top'
+            src='https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg'
+            alt='food'
+          />
+        </MDBView>
+
+        <MDBCardBody>
+          <h6 className='pink-text'>
+            <MDBIcon
+              size="4x"
+              className="text-center"
+              icon={icons[card.occasion] ? icons[card.occasion].icon : "tree"}
+            />
+          </h6>
+
+          <MDBCardTitle>{card.occasion}</MDBCardTitle>
+          <MDBCardText>{card.text}</MDBCardText>
+
+          <MDBBtn className='unique' onClick={onClick}>Generate</MDBBtn>
+
+        </MDBCardBody>
+      </MDBCard>
+    </MDBCol >
   );
-};
+}
+
 
 // CardExample.defaultProps = {
 //   card: {
