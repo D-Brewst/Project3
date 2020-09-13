@@ -64,14 +64,14 @@ import React from "react";
 import API from "../../utils/API";
 
 import Birthdaycard from "../../components/Birthday";
-import Halloweencard from "../../components/Halloween";
+import Halloweencard from "../../components/Valentine";
 import Hannukahcard from "../../components/Hannukah";
 import Christmascard from "../../components/Christmas";
 import Card from "../../components/Card/Card";
 import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 import ChristmasButton from "../../components/ChrismasButton";
 import HanukkahButton from "../../components/HanukkahButton";
-import HalloweenButton from "../../components/HalloweenButton";
+import ValentineButton from "../../components/ValentineButton";
 import BirthdayButton from "../../components/BirthdayButton";
 /**
  *
@@ -102,6 +102,44 @@ function Members() {
       ...state,
       selected: state.messages?.length ? randArrayEl(state.messages) : {},
     });
+  
+  const birthdayMessages = state.messages.filter((messages) => {
+    return messages.occasion.includes("Birthday");
+  });
+  const valentineMessages = state.messages.filter((messages) => {
+    return messages.occasion.includes("Valentine");
+  });
+  const hanukkahMessages = state.messages.filter((messages) => {
+    return messages.occasion.includes("Hanukkah");
+  });
+  const christmasMessages = state.messages.filter((messages) => {
+    return messages.occasion.includes("Christmas");
+  });
+  
+  const getRandomChristmas = () =>
+  setState({
+    ...state,
+    selected: christmasMessages?.length ? randArrayEl(christmasMessages) : {},
+  });
+
+  const getRandomHanukkah = () =>
+    setState({
+      ...state,
+      selected: hanukkahMessages?.length ? randArrayEl(hanukkahMessages) : {},
+    });
+  
+  const getRandomValentine = () =>
+    setState({
+      ...state,
+      selected: valentineMessages?.length ? randArrayEl(valentineMessages) : {},
+    });
+  
+  const getRandomBirthday = () =>
+    setState({
+      ...state,
+      selected: birthdayMessages?.length ? randArrayEl(birthdayMessages) : {},
+    });
+
   return (
     <>
       {" "}
@@ -114,10 +152,10 @@ function Members() {
           </div>
         </div>
         <div id="">
-          <ChristmasButton />
-          <HanukkahButton />
-          <HalloweenButton />
-          <BirthdayButton />
+          <ChristmasButton onClick={getRandomChristmas} />
+          <HanukkahButton onClick={getRandomHanukkah} />
+          <ValentineButton onClick={getRandomValentine} />
+          <BirthdayButton onClick={getRandomBirthday} />
         </div>
       </div>
       <hr />
