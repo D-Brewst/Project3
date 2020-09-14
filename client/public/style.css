@@ -1,5 +1,5 @@
 .logo {
-  position: fixed;
+  position: absolute;
   margin-left: 1em;
   /* margin-top: 0.2em; */
 }

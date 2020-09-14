@@ -5,7 +5,7 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
-import About from './pages/About/index';
+import About from "./pages/About/index";
 import Home from "./pages/Home/index";
 import Login from "./pages/Login/index";
 import Members from "./pages/Members/index";
@@ -22,7 +22,7 @@ import {
   MDBNavLink,
 } from "mdbreact";
 import { useGlobalContext } from "./context/GlobalContext";
-import logo from "./images/candle_2.svg";
+import logo from "./images/wlogoblack.svg";
 
 function App() {
   const [state, dispatch] = useGlobalContext();
@@ -51,7 +51,7 @@ function App() {
             <MDBNavLink to="/">
               <span>
                 {" "}
-                <img width="50px" src={logo} alt="" />{" "}
+                <img width="80px" src={logo} alt="" />{" "}
               </span>
             </MDBNavLink>
           </div>
@@ -90,61 +90,61 @@ function App() {
           </Switch>
         </Router>
       ) : (
-          <Router>
-            <div className="logo">
-              {" "}
-              <MDBNavLink to="/">
-                <img width="50px" src={logo} alt="" />
-              </MDBNavLink>
-            </div>
-            <MDBNav className="nav-class justify-content-end" dark expand="md">
-              {/* <MDBNavItem className="justify-content-end" active>
+        <Router>
+          <div className="logo">
+            {" "}
+            <MDBNavLink to="/">
+              <img width="80px" src={logo} alt="" />
+            </MDBNavLink>
+          </div>
+          <MDBNav className="nav-class justify-content-end" dark expand="md">
+            {/* <MDBNavItem className="justify-content-end" active>
               <MDBNavLink className="black-text justify-content-end" to="/">
                 Home
               </MDBNavLink>
             </MDBNavItem> */}
-              <MDBNavItem>
-                <MDBNavLink className="black-text" to="/about">
-                  <span>About</span>
-                </MDBNavLink>
-              </MDBNavItem>
-              <MDBNavItem>
-                <MDBNavLink className="black-text" to="/sample">
-                  Sample Messages
+            <MDBNavItem>
+              <MDBNavLink className="black-text" to="/about">
+                <span>About</span>
               </MDBNavLink>
-              </MDBNavItem>
-              <MDBNavItem>
-                <MDBNavLink
-                  className="black-text justify-content-end"
-                  to="/login"
-                >
-                  <span> Login </span>
-                </MDBNavLink>
-              </MDBNavItem>
-              <MDBNavItem>
-                <MDBNavLink
-                  className="black-text justify-content-end"
-                  to="/signup"
-                >
-                  <span> Sign Up </span>
-                </MDBNavLink>
-              </MDBNavItem>
-            </MDBNav>
+            </MDBNavItem>
+            <MDBNavItem>
+              <MDBNavLink className="black-text" to="/sample">
+                Sample Messages
+              </MDBNavLink>
+            </MDBNavItem>
+            <MDBNavItem>
+              <MDBNavLink
+                className="black-text justify-content-end"
+                to="/login"
+              >
+                <span> Login </span>
+              </MDBNavLink>
+            </MDBNavItem>
+            <MDBNavItem>
+              <MDBNavLink
+                className="black-text justify-content-end"
+                to="/signup"
+              >
+                <span> Sign Up </span>
+              </MDBNavLink>
+            </MDBNavItem>
+          </MDBNav>
 
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/sample" component={Sample} />
-              <Route exact path="/login">
-                {state.user?.token ? <Redirect to="/members" /> : <Login />}
-              </Route>
-              <Route exact path="/signup" component={Signup} />
-              <Route exact path="/members">
-                {!state.user?.token ? <Redirect to="/members" /> : <Members />}
-              </Route>
-              <Route exact path="/about" component={About} />
-            </Switch>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/sample" component={Sample} />
+            <Route exact path="/login">
+              {state.user?.token ? <Redirect to="/members" /> : <Login />}
+            </Route>
+            <Route exact path="/signup" component={Signup} />
+            <Route exact path="/members">
+              {!state.user?.token ? <Redirect to="/members" /> : <Members />}
+            </Route>
+            <Route exact path="/about" component={About} />
+          </Switch>
 
-            {/* <Switch>
+          {/* <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login}>
               {state.user?.token ? <Redirect to="/members" /> : <Login />}
@@ -153,11 +153,11 @@ function App() {
               {state.user?.token ? <Redirect to="/login" /> : <Signup />}
             </ Route>
           </Switch> */}
-          </Router>
-        )}
-        <br/>
-        <br/>
-        <br/>
+        </Router>
+      )}
+      <br />
+      <br />
+      <br />
       <Footer />
     </div>
   );
