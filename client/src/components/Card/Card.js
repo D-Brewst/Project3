@@ -65,6 +65,7 @@ const CardExample = ({ card, onClick }) => {
           className="justify-content-center"
           targetRef={targetRef}
           filename="card.pdf"
+          options={options}
         >
           {({ toPdf }) => (
             <MDBBtn
