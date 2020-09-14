@@ -1,20 +1,20 @@
 #samples {
-  text-align: center !important;
-  margin-top: 60px !important;
-  padding-left: 10% !important;
-  padding-right: 10% !important;
-}
-#table {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-#head {
-  align-items: center;
-  display: flex;
-  justify-content: center !important;
-  font-size: 1.65rem !important;
-  font-weight: 400 !important;
-  padding-top: 2% !important;
-  padding-bottom: 1% !important;
-}
+    text-align: center !important;
+    margin-top: 60px !important;
+    padding-left: 10% !important;
+    padding-right: 10% !important;
+  }
+  #table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #head {
+    align-items: center;
+    display: flex;
+    justify-content: center !important;
+    font-size: 1.65rem !important;
+    font-weight: 400 !important;
+    padding-top: 2% !important;
+    padding-bottom: 1% !important;
+  }

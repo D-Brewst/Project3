@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import "./about.css";
 
 function About() {
 
     return (
-        <div>
+        <div id="About">
             <h1>
                 About WyldCard
             </h1>
