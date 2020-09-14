@@ -2,6 +2,21 @@ import React, { Fragment } from "react";
 import { MDBBtn, MDBCol } from "mdbreact";
 
 const CardButton = (props) => {
+  const Occasions = {
+    Birthday: {
+      color: "primary",
+    },
+    Christmas: {
+      color: "success",
+    },
+    Valentine: {
+      color: "danger",
+    },
+    Hanukkah: {
+      color: "info",
+    },
+  };
+
   return (
     <MDBCol className="justify-content-center col-auto">
       <MDBBtn
