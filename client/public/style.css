@@ -59,6 +59,6 @@ body {
   justify-items: center;
 }
 
-/* .negative-margin {
-  margin-left: -inherit;
-} */
+.negative-margin {
+  margin-left: inherit;
+}

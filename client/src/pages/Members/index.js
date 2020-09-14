@@ -101,20 +101,30 @@ function Members() {
   return (
     <>
       {" "}
-      <div className="row">
-        <div className="col">
-          {state.selected && <Card card={state.selected} onClick={getRandom} />}
+      <div className="negative-margin">
+        <div className="row">
+          <div className="col">
+            {state.selected && (
+              <Card card={state.selected} onClick={getRandom} />
+            )}
+          </div>
+          <div className="col">
+            {state.selected && (
+              <Card card={state.selected} onClick={getRandom} />
+            )}
+          </div>
         </div>
-        <div className="col">
-          {state.selected && <Card card={state.selected} onClick={getRandom} />}
-        </div>
-      </div>
-      <div className="row">
-        <div className="col">
-          {state.selected && <Card card={state.selected} onClick={getRandom} />}
-        </div>
-        <div className="col">
-          {state.selected && <Card card={state.selected} onClick={getRandom} />}
+        <div className="row">
+          <div className="col">
+            {state.selected && (
+              <Card card={state.selected} onClick={getRandom} />
+            )}
+          </div>
+          <div className="col">
+            {state.selected && (
+              <Card card={state.selected} onClick={getRandom} />
+            )}
+          </div>
         </div>
       </div>
       <hr />
