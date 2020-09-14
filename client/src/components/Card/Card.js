@@ -119,7 +119,7 @@ const CardExample = ({ card, onClick }) => {
               onChange={handleChange} // handle innerHTML change
               tagName="article" // Use a custom HTML tag (uses a div by default)
             />
-            <MDBCardText></MDBCardText>
+            {/* <MDBCardText></MDBCardText> */}
 
             {/* <ReactToPdf targetRef={ref} filename="card.pdf">
               {({toPdf}) => (
