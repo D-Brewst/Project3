@@ -14,6 +14,9 @@ function SampleMessages() {
   const christmasMessages = sample.filter((messages) => {
     return messages.occasion.includes("Christmas");
   });
+  const valentineMessages = sample.filter((messages) => {
+    return messages.occasion.includes("Valentine");
+  });
   return (
     <div id="samples">
       <MDBTableHead id="head">Birthday</MDBTableHead>
@@ -53,6 +56,22 @@ function SampleMessages() {
         <MDBTableBody>
           <tr>
             {hanukkahMessages.map((sample) => {
+              return (
+                <Table
+                  key={sample.id}
+                  occasion={sample.occasion}
+                  text={sample.text}
+                />
+              );
+            })}
+          </tr>
+        </MDBTableBody>
+      </MDBTable>
+      <MDBTableHead id="head">Valentine's Day</MDBTableHead>
+      <MDBTable id="table">
+        <MDBTableBody>
+          <tr>
+            {valentineMessages.map((sample) => {
               return (
                 <Table
                   key={sample.id}
