@@ -56,7 +56,7 @@ const CardExample = ({ card, onClick }) => {
   const options = {
     orientation: "portrait",
     unit: "in",
-    format: [400, 215],
+    format: [500, 310],
   };
 
   return (
