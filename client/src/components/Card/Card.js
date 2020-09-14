@@ -1,6 +1,7 @@
 import React, {useRef, useEffect, useState} from "react";
 import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBIcon, MDBCol, MDBView, MDBCardImage, MDBBtn } from "mdbreact";
 import ContentEditable from 'react-contenteditable';
+import Pdf from "react-to-pdf";
 import Valentine from "../Valentine";
 
 const CardExample = ({ card, onClick }) => {
@@ -20,10 +21,7 @@ const CardExample = ({ card, onClick }) => {
   
   const [state, setState] = useState(card.text);
   const contentEditable = useRef();
-  console.log("card.text")
-  console.log(card.text)
-  console.log("state")
-  console.log(state)
+  const ref = React.createRef();
 
   useEffect(() => {setState(card.text)}, [card])
   const handleChange = evt => {
@@ -32,7 +30,12 @@ const CardExample = ({ card, onClick }) => {
 
   return (
     <MDBCol md='4'>
-      <MDBCard narrow>
+      <Pdf targetRef={ref} filename="card.pdf">
+              {({toPdf}) => (
+                  <MDBBtn className='unique' onClick={toPdf}>Download</MDBBtn>
+              )}
+      </Pdf> 
+      <MDBCard narrow ref={ref}>
         <MDBView cascade>
           <MDBCardImage
             hover
@@ -62,8 +65,11 @@ const CardExample = ({ card, onClick }) => {
               tagName='article' // Use a custom HTML tag (uses a div by default)
             /></MDBCardText>
 
-          <MDBBtn className='unique' onClick={onClick}>Edit Message</MDBBtn>
-
+          {/* <ReactToPdf targetRef={ref} filename="card.pdf">
+              {({toPdf}) => (
+                  <MDBBtn className='unique' onClick={toPdf}>Download</MDBBtn>
+              )}
+          </ReactToPdf>          */}
         </MDBCardBody>
       </MDBCard>
     </MDBCol >
