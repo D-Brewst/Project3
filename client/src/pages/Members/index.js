@@ -106,16 +106,21 @@ function Members() {
   // });
 
   /**
-   * 
+   *
    * @param {string} occasion What type of occasion you'd like to validate
    * @returns {boolean} Whether or not occasion exists in messages
    */
-  const checkMessages = (occasion) => state.messages.some(message => message.occasion === occasion)
-  const filterMessages = (occasion) => state.messages.filter(messages => messages.occasion === occasion);
-  const getRandomMessage = (occasion) => setState({
-    ...state,
-    selected: checkMessages(occasion) ? randArrayEl(filterMessages(occasion)) : {}
-  })
+  const checkMessages = (occasion) =>
+    state.messages.some((message) => message.occasion === occasion);
+  const filterMessages = (occasion) =>
+    state.messages.filter((messages) => messages.occasion === occasion);
+  const getRandomMessage = (occasion) =>
+    setState({
+      ...state,
+      selected: checkMessages(occasion)
+        ? randArrayEl(filterMessages(occasion))
+        : {},
+    });
 
   // const getRandomChristmas = () =>
   //   setState({
@@ -129,10 +134,10 @@ function Members() {
   //     selected: hanukkahMessages?.length ? randArrayEl(hanukkahMessages) : {},
   //   });
 
-  // const getRandomValentine = () =>
+  // const getRandomValentine = (x) =>
   //   setState({
   //     ...state,
-  //     selected: valentineMessages?.length ? randArrayEl(valentineMessages) : {},
+  //     selected: x?.length ? randArrayEl(x) : {},
   //   });
 
   // const getRandomBirthday = () =>
@@ -145,9 +150,7 @@ function Members() {
     <>
       <div>
         <div className="d-flex w-100 justify-content-center">
-          {state.selected && (
-            <Card card={state.selected} onClick={getRandom} />
-          )}
+          {state.selected && <Card card={state.selected} onClick={getRandom} />}
         </div>
         <div className="d-flex w-100 justify-content-center">
           <MDBRow>
@@ -168,7 +171,6 @@ function Members() {
           </MDBRow>
         </div>
       </div>
-      <hr />
     </>
   );
 }
