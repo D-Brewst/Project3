@@ -13,7 +13,7 @@ const Modal = ({ isShowing, hide }) => isShowing ? ReactDOM.createPortal(
                 </div>
                 <p>
                     Hello, I'm a modal.
-        </p>
+                </p>
             </div>
         </div>
     </React.Fragment>, document.body

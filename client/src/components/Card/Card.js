@@ -1,6 +1,6 @@
 import React from "react";
 import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBIcon, MDBCol, MDBView, MDBCardImage, MDBBtn } from "mdbreact";
-const CardExample = ({ card, onClick }) => {
+const CardExample = ({ card }) => {
   const icons = {
     Birthday: { icon: "birthday-cake", color: "" },
     Christmas: { icon: "tree", color: "" },
@@ -30,12 +30,10 @@ const CardExample = ({ card, onClick }) => {
               icon={icons[card.occasion] ? icons[card.occasion].icon : "tree"}
             />
           </h6>
+          <button onClick="onClick()">Edit Message</button>
 
           <MDBCardTitle>{card.occasion}</MDBCardTitle>
           <MDBCardText>{card.text}</MDBCardText>
-
-          <MDBBtn className='unique' onClick={onClick}>Generate</MDBBtn>
-
         </MDBCardBody>
       </MDBCard>
     </MDBCol >
