@@ -23,7 +23,9 @@
     "mongoose-data-seed": "^2.1.6",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "react-contenteditable": "^3.3.5",
+    "react-inline-editing": "^1.0.10"
   },
   "devDependencies": {
     "concurrently": "^5.3.0",

@@ -62,20 +62,8 @@
 // export default Members;
 import React from "react";
 import API from "../../utils/API";
-
-import Birthdaycard from "../../components/Birthday";
-import Halloweencard from "../../components/Valentine";
-import Hannukahcard from "../../components/Hannukah";
-import Christmascard from "../../components/Christmas";
 import Card from "../../components/Card/Card";
-import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
-
-
 import CardButton from "../../components/CardButton";
-// import ChristmasButton from "../../components/ChrismasButton";
-// import HanukkahButton from "../../components/HanukkahButton";
-// import ValentineButton from "../../components/ValentineButton";
-// import BirthdayButton from "../../components/BirthdayButton";
 
 /**
  *

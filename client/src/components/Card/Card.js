@@ -1,5 +1,7 @@
-import React from "react";
+import React, {useRef} from "react";
 import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBIcon, MDBCol, MDBView, MDBCardImage, MDBBtn } from "mdbreact";
+import ContentEditable from 'react-contenteditable';
+
 const CardExample = ({ card, onClick }) => {
   const icons = {
     Birthday: { icon: "birthday-cake", color: "" },
@@ -8,6 +10,12 @@ const CardExample = ({ card, onClick }) => {
     Hanukkah: { icon: "menorah", color: "" },
   };
 
+  const [state, setState] = React.useState({html: card.text});
+  const contentEditable = useRef();
+ 
+  const handleChange = evt => {
+    setState({html: evt.target.value});
+  };
 
   return (
     <MDBCol md='4'>
@@ -32,9 +40,16 @@ const CardExample = ({ card, onClick }) => {
           </h6>
 
           <MDBCardTitle>{card.occasion}</MDBCardTitle>
-          <MDBCardText>{card.text}</MDBCardText>
+          <MDBCardText>
+            <ContentEditable
+              innerRef={contentEditable}
+              html={state.html} // innerHTML of the editable div
+              disabled={false}       // use true to disable editing
+              onChange={handleChange} // handle innerHTML change
+              tagName='article' // Use a custom HTML tag (uses a div by default)
+            /></MDBCardText>
 
-          <MDBBtn className='unique' onClick={onClick}>Generate</MDBBtn>
+          <MDBBtn className='unique' onClick={onClick}>Edit Message</MDBBtn>
 
         </MDBCardBody>
       </MDBCard>
