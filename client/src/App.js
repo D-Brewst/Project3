@@ -23,6 +23,7 @@ import {
 } from "mdbreact";
 import { useGlobalContext } from "./context/GlobalContext";
 import logo from "./images/w-color-logo.svg";
+// color logo
 
 function App() {
   const [state, dispatch] = useGlobalContext();
