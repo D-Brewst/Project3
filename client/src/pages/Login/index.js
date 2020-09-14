@@ -5,7 +5,6 @@ import axios from "axios";
 import { LOGIN } from "../../context/actions";
 import { useHistory } from "react-router-dom";
 
-
 const Login = () => {
   const [state, dispatch] = useGlobalContext();
 

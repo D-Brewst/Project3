@@ -1,47 +1,116 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import {
   MDBCard,
   MDBCardBody,
-  // MDBCardImage,
   MDBCardTitle,
   MDBCardText,
-  MDBRow,
-  MDBCol,
   MDBIcon,
+  MDBCol,
+  MDBView,
+  MDBCardImage,
+  MDBBtn,
 } from "mdbreact";
+import ContentEditable from "react-contenteditable";
+import Pdf from "react-to-pdf";
+
 const CardExample = ({ card, onClick }) => {
-  const icons = {
-    birthday: { icon: "birthday-cake", color: "" },
-    Christmas: { icon: "gift", color: "" },
-    Halloween: { icon: "ghost", color: "" },
-    Hannukah: { icon: "menorah", color: "" },
+  const Occasions = {
+    Birthday: {
+      icon: "birthday-cake",
+      src: "assets/images/birthday.jpg",
+      color: "",
+    },
+    Christmas: {
+      icon: "tree",
+      src:
+        "https://easyfood.ie/wp-content/uploads/2018/12/Fun-facts-Christmas-food.jpg",
+      color: "",
+    },
+    Valentine: {
+      icon: "heart",
+      src:
+        "https://storage.googleapis.com/burbcommunity-aroundambler/2020/01/valentines-day-header-1024x576.jpg",
+      color: "",
+    },
+    Hanukkah: {
+      icon: "menorah",
+      src:
+        "https://media.istockphoto.com/photos/happy-hanukkah-picture-id864602150",
+      color: "",
+    },
+  };
+
+  const [state, setState] = useState("");
+  const [targetRef, setTargetRef] = useState(null);
+  const contentEditable = useRef();
+  const ref = React.createRef();
+
+  useEffect(() => {
+    setState(card.text);
+    setTargetRef(ref);
+  }, [card.text]);
+
+  const handleChange = (evt) => {
+    setState(evt.target.value);
   };
 
   return (
-    <MDBRow className="mt-5 justify-content-center">
-      <MDBCol md="4">
-        <MDBCard className="cardCon">
-          <MDBIcon
-            size="4x"
-            className="text-center"
-            icon={
-              icons[card.occasion] ? icons[card.occasion].icon : "candy-cane"
-            }
-          />
-          <MDBCardBody className="white-text rounded-bottom elegant-color">
-            <MDBIcon icon="share-alt" className="white-text" />
+    <MDBCol md="4">
+      <Pdf targetRef={targetRef} filename="card.pdf">
+        {({ toPdf }) => (
+          <MDBBtn className="unique" onClick={toPdf}>
+            Download
+          </MDBBtn>
+        )}
+      </Pdf>
+      <div ref={targetRef}>
+        <MDBCard narrow>
+          <MDBView cascade>
+            <MDBCardImage
+              hover
+              overlay="white-slight"
+              className="card-img-top"
+              src={
+                Occasions[card.occasion] ? Occasions[card.occasion].src : "tree"
+              }
+              alt="food"
+            />
+          </MDBView>
+
+          <MDBCardBody>
+            <h6 className="pink-text">
+              <MDBIcon
+                size="4x"
+                className="text-center"
+                icon={
+                  Occasions[card.occasion]
+                    ? Occasions[card.occasion].icon
+                    : "tree"
+                }
+              />
+            </h6>
+            {/* <button onClick={onClick}>Edit Message</button> */}
+
             <MDBCardTitle>{card.occasion}</MDBCardTitle>
-            <hr className="hr-light" />
-            <MDBCardText className="white-text">{card.text}</MDBCardText>
-            <br /> <br />
-            <h5 className="white-text" onClick={onClick}>
-              GENERATE
-              <MDBIcon fab icon="first-order-alt" className="ml-2" />
-            </h5>
+
+            <ContentEditable
+              innerRef={contentEditable}
+              html={state || ""} // innerHTML of the editable div
+              disabled={false} // use true to disable editing
+              onChange={handleChange} // handle innerHTML change
+              tagName="article" // Use a custom HTML tag (uses a div by default)
+            />
+            <MDBCardText></MDBCardText>
+
+            {/* <ReactToPdf targetRef={ref} filename="card.pdf">
+              {({toPdf}) => (
+                  <MDBBtn className='unique' onClick={toPdf}>Download</MDBBtn>
+              )}
+          </ReactToPdf>          */}
           </MDBCardBody>
         </MDBCard>
-      </MDBCol>
-    </MDBRow>
+      </div>
+    </MDBCol>
   );
 };
 

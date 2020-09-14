@@ -8,6 +8,7 @@ import {
 import Home from "./pages/Home/index";
 import Login from "./pages/Login/index";
 import Members from "./pages/Members/index";
+import Sample from "./pages/Sample/index";
 import Signup from "./pages/Signup/index";
 import Footer from "./components/Footer/index";
 import { LOGIN, LOGOUT } from "./context/actions";
@@ -65,6 +66,11 @@ function App() {
               </MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
+              <MDBNavLink className="black-text" to="/sample">
+                Sample Messages
+              </MDBNavLink>
+            </MDBNavItem>
+            <MDBNavItem>
               <MDBNavLink className="black-text" to="/">
                 <span onClick={logOut}>Log Out</span>{" "}
               </MDBNavLink>
@@ -73,6 +79,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/members" component={Members} />
+            <Route exact path="/sample" component={Sample} />
           </Switch>
         </Router>
       ) : (
@@ -89,6 +96,11 @@ function App() {
                 Home
               </MDBNavLink>
             </MDBNavItem> */}
+            <MDBNavItem>
+              <MDBNavLink className="black-text" to="/sample">
+                Sample Messages
+              </MDBNavLink>
+            </MDBNavItem>
             <MDBNavItem>
               <MDBNavLink
                 className="black-text justify-content-end"
@@ -109,6 +121,7 @@ function App() {
 
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route exact path="/sample" component={Sample} />
             <Route exact path="/login">
               {state.user?.token ? <Redirect to="/members" /> : <Login />}
             </Route>
