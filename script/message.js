@@ -478,7 +478,7 @@ const messageSeed = [
 db.Message.remove({})
   .then(() => db.Message.collection.insertMany(messageSeed))
   .then((data) => {
-    console.log(data.result.n + " records inserted!");
+    //console.log(data.result.n + " records inserted!");
     process.exit(0);
   })
   .catch((err) => {

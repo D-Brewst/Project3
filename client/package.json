@@ -4,12 +4,14 @@
   "private": true,
   "proxy": "http://localhost:4000",
   "dependencies": {
+    "cra-template": "1.0.3",
     "mdbreact": "^4.27.0",
     "react": "^16.13.1",
+    "react-contenteditable": "^3.3.5",
     "react-dom": "^16.13.1",
-    "cra-template": "1.0.3",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "react-to-pdf": "0.0.13"
   },
   "scripts": {
     "start": "react-scripts start",

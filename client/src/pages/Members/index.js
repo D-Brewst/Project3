@@ -62,20 +62,8 @@
 // export default Members;
 import React from "react";
 import API from "../../utils/API";
-
-import Birthdaycard from "../../components/Birthday";
-import Halloweencard from "../../components/Valentine";
-import Hannukahcard from "../../components/Hannukah";
-import Christmascard from "../../components/Christmas";
 import Card from "../../components/Card/Card";
-import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
-
-
 import CardButton from "../../components/CardButton";
-// import ChristmasButton from "../../components/ChrismasButton";
-// import HanukkahButton from "../../components/HanukkahButton";
-// import ValentineButton from "../../components/ValentineButton";
-// import BirthdayButton from "../../components/BirthdayButton";
 
 /**
  *
@@ -92,7 +80,6 @@ function Members() {
 
   React.useEffect(() => {
     API.getCards().then((res) => {
-      console.log(res);
       setState((state) => ({
         ...state,
         messages: res,
@@ -118,16 +105,21 @@ function Members() {
   // });
 
   /**
-   * 
+   *
    * @param {string} occasion What type of occasion you'd like to validate
    * @returns {boolean} Whether or not occasion exists in messages
    */
-  const checkMessages = (occasion) => state.messages.some(message => message.occasion === occasion)
-  const filterMessages = (occasion) => state.messages.filter(messages => messages.occasion === occasion);
-  const getRandomMessage = (occasion) => setState({
-    ...state,
-    selected: checkMessages(occasion) ? randArrayEl(filterMessages(occasion)) : {}
-  })
+  const checkMessages = (occasion) =>
+    state.messages.some((message) => message.occasion === occasion);
+  const filterMessages = (occasion) =>
+    state.messages.filter((messages) => messages.occasion === occasion);
+  const getRandomMessage = (occasion) =>
+    setState({
+      ...state,
+      selected: checkMessages(occasion)
+        ? randArrayEl(filterMessages(occasion))
+        : {},
+    });
 
   // const getRandomChristmas = () =>
   //   setState({
@@ -141,10 +133,10 @@ function Members() {
   //     selected: hanukkahMessages?.length ? randArrayEl(hanukkahMessages) : {},
   //   });
 
-  // const getRandomValentine = () =>
+  // const getRandomValentine = (x) =>
   //   setState({
   //     ...state,
-  //     selected: valentineMessages?.length ? randArrayEl(valentineMessages) : {},
+  //     selected: x?.length ? randArrayEl(x) : {},
   //   });
 
   // const getRandomBirthday = () =>
@@ -157,9 +149,7 @@ function Members() {
     <>
       <div>
         <div className="d-flex w-100 justify-content-center">
-          {state.selected && (
-            <Card card={state.selected} onClick={getRandom} />
-          )}
+          {state.selected && <Card card={state.selected} onClick={getRandom} />}
         </div>
         <div className="d-flex w-100 justify-content-center">
           <CardButton text="Christmas" genRandom={getRandomMessage} />
@@ -168,7 +158,6 @@ function Members() {
           <CardButton text="Birthday" genRandom={getRandomMessage} />
         </div>
       </div>
-      <hr />
     </>
   );
 }
