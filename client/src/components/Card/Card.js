@@ -1,6 +1,7 @@
-import React, {useRef} from "react";
+import React, {useRef, useEffect, useState} from "react";
 import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBIcon, MDBCol, MDBView, MDBCardImage, MDBBtn } from "mdbreact";
 import ContentEditable from 'react-contenteditable';
+import Valentine from "../Valentine";
 
 const CardExample = ({ card, onClick }) => {
   const icons = {
@@ -10,11 +11,23 @@ const CardExample = ({ card, onClick }) => {
     Hanukkah: { icon: "menorah", color: "" },
   };
 
-  const [state, setState] = React.useState({html: card.text});
+  const images = {
+    Birthday: { src: "https://www.happybirthdaymsg.com/wp-content/uploads/2016/01/happy-birthday-image-10.jpg", color: "" },
+    Christmas: { src: "https://easyfood.ie/wp-content/uploads/2018/12/Fun-facts-Christmas-food.jpg", color: "" },
+    Valentine: { src: "https://storage.googleapis.com/burbcommunity-aroundambler/2020/01/valentines-day-header-1024x576.jpg", color: "" },
+    Hanukkah: { src: "https://media.istockphoto.com/photos/happy-hanukkah-picture-id864602150", color: "" },
+  }
+  
+  const [state, setState] = useState(card.text);
   const contentEditable = useRef();
- 
+  console.log("card.text")
+  console.log(card.text)
+  console.log("state")
+  console.log(state)
+
+  useEffect(() => {setState(card.text)}, [card])
   const handleChange = evt => {
-    setState({html: evt.target.value});
+    setState(evt.target.value);
   };
 
   return (
@@ -25,7 +38,7 @@ const CardExample = ({ card, onClick }) => {
             hover
             overlay='white-slight'
             className='card-img-top'
-            src='https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg'
+            src={images[card.occasion] ? images[card.occasion].src : "tree"}
             alt='food'
           />
         </MDBView>
@@ -43,7 +56,7 @@ const CardExample = ({ card, onClick }) => {
           <MDBCardText>
             <ContentEditable
               innerRef={contentEditable}
-              html={state.html} // innerHTML of the editable div
+              html={state} // innerHTML of the editable div
               disabled={false}       // use true to disable editing
               onChange={handleChange} // handle innerHTML change
               tagName='article' // Use a custom HTML tag (uses a div by default)

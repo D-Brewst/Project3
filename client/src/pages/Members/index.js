@@ -80,7 +80,6 @@ function Members() {
 
   React.useEffect(() => {
     API.getCards().then((res) => {
-      console.log(res);
       setState((state) => ({
         ...state,
         messages: res,
