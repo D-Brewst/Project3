@@ -64,6 +64,7 @@ import React from "react";
 import API from "../../utils/API";
 import Card from "../../components/Card/Card";
 import CardButton from "../../components/CardButton";
+import {MDBRow, MDBCol} from "mdbreact";
 
 /**
  *
@@ -149,10 +150,22 @@ function Members() {
           )}
         </div>
         <div className="d-flex w-100 justify-content-center">
-          <CardButton text="Christmas" genRandom={getRandomMessage} />
-          <CardButton text="Hanukkah" genRandom={getRandomMessage} />
-          <CardButton text="Valentine" genRandom={getRandomMessage} />
-          <CardButton text="Birthday" genRandom={getRandomMessage} />
+          <MDBRow>
+            <MDBCol className="col-auto">
+              <CardButton text="Christmas" genRandom={getRandomMessage} />
+            </MDBCol>
+            <MDBCol className="col-auto">
+              <CardButton text="Hanukkah" genRandom={getRandomMessage} />
+            </MDBCol>
+          </MDBRow>
+          <MDBRow>
+            <MDBCol className="col-auto">
+              <CardButton text="Valentine" genRandom={getRandomMessage} />
+            </MDBCol>
+            <MDBCol className="col-auto">
+              <CardButton text="Birthday" genRandom={getRandomMessage} />
+            </MDBCol>
+          </MDBRow>
         </div>
       </div>
       <hr />

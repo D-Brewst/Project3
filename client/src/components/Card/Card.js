@@ -23,7 +23,8 @@ const CardExample = ({ card, onClick }) => {
   const contentEditable = useRef();
   const ref = React.createRef();
 
-  useEffect(() => {setState(card.text)}, [card])
+  useEffect(() => {setState(card.text)}, [card]);
+
   const handleChange = evt => {
     setState(evt.target.value);
   };
@@ -63,7 +64,8 @@ const CardExample = ({ card, onClick }) => {
               disabled={false}       // use true to disable editing
               onChange={handleChange} // handle innerHTML change
               tagName='article' // Use a custom HTML tag (uses a div by default)
-            /></MDBCardText>
+            />
+          </MDBCardText>
 
           {/* <ReactToPdf targetRef={ref} filename="card.pdf">
               {({toPdf}) => (
