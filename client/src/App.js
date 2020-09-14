@@ -22,7 +22,7 @@ import {
   MDBNavLink,
 } from "mdbreact";
 import { useGlobalContext } from "./context/GlobalContext";
-import logo from "./images/wlogoblack.svg";
+import logo from "./images/w-color-logo.svg";
 
 function App() {
   const [state, dispatch] = useGlobalContext();
