@@ -38,7 +38,6 @@ We created an app that generates a card writing process for Christmas, Hanukkah,
 **Dev-dependencies**
 - [x] concurrently
 - [x] nodemon   
-
 ---
 
 ## <a name="Usage"></a>Usages:
