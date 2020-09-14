@@ -155,6 +155,9 @@ function App() {
           </Switch> */}
         </Router>
       )}
+      <br />
+      <br />
+      <br />
       <Footer />
     </div>
   );

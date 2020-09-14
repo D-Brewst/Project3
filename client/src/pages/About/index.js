@@ -1,8 +1,9 @@
 import React from "react";
+import "./about.css";
 
 function About() {
   return (
-    <div className="mt-5">
+    <div className="mt-5" id="About">
       <h1>About WyldCard</h1>
       <hr />
       <p>
