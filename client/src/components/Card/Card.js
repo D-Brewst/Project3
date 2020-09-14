@@ -9,6 +9,7 @@ import {
   MDBView,
   MDBCardImage,
   MDBBtn,
+  MDBRow,
 } from "mdbreact";
 import ContentEditable from "react-contenteditable";
 import Pdf from "react-to-pdf";
@@ -52,20 +53,34 @@ const CardExample = ({ card, onClick }) => {
   };
 
   const options = {
-    orientation: 'portrait',
-    unit: 'in',
-    format: [400,215]
+    orientation: "portrait",
+    unit: "in",
+    format: [400, 215],
   };
 
   return (
     <MDBCol md="4">
-      <Pdf targetRef={targetRef} filename="card.pdf" options={options}>
-        {({ toPdf }) => (
-          <MDBBtn className="unique" onClick={toPdf}>
-            Download
-          </MDBBtn>
-        )}
-      </Pdf>
+      <MDBRow className="justify-content-end">
+        <Pdf
+          className="justify-content-center"
+          targetRef={targetRef}
+          filename="card.pdf"
+          options={options}
+        >
+          {({ toPdf }) => (
+            <MDBBtn
+              tag="a"
+              floating
+              gradient="purple"
+              color="elegant"
+              className="unique mb-3 justify-content-center"
+              onClick={toPdf}
+            >
+              <MDBIcon icon="download" />
+            </MDBBtn>
+          )}
+        </Pdf>
+      </MDBRow>
       <div ref={targetRef}>
         <MDBCard narrow>
           <MDBView cascade>
@@ -81,7 +96,7 @@ const CardExample = ({ card, onClick }) => {
           </MDBView>
 
           <MDBCardBody>
-            <h6 className="pink-text">
+            <h6 className="pink-text text-center">
               <MDBIcon
                 size="4x"
                 className="text-center"
@@ -94,7 +109,7 @@ const CardExample = ({ card, onClick }) => {
             </h6>
             {/* <button onClick={onClick}>Edit Message</button> */}
 
-            <MDBCardTitle>{card.occasion}</MDBCardTitle>
+            <MDBCardTitle className="text-center">{card.occasion}</MDBCardTitle>
 
             <ContentEditable
               innerRef={contentEditable}
