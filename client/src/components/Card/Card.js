@@ -13,6 +13,7 @@ import {
 } from "mdbreact";
 import ContentEditable from "react-contenteditable";
 import Pdf from "react-to-pdf";
+import "./card.css";
 
 const CardExample = ({ card, onClick }) => {
   const Occasions = {
@@ -55,7 +56,7 @@ const CardExample = ({ card, onClick }) => {
   const options = {
     orientation: "portrait",
     unit: "in",
-    format: [400, 215],
+    format: [500, 310],
   };
 
   return (
