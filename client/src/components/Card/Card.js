@@ -22,20 +22,17 @@ const CardExample = ({ card, onClick }) => {
     },
     Christmas: {
       icon: "tree",
-      src:
-        "https://easyfood.ie/wp-content/uploads/2018/12/Fun-facts-Christmas-food.jpg",
+      src: "assets/images/christmas1.jpg",
       color: "",
     },
     Valentine: {
       icon: "heart",
-      src:
-        "https://storage.googleapis.com/burbcommunity-aroundambler/2020/01/valentines-day-header-1024x576.jpg",
+      src: "assets/images/vday.jpg",
       color: "",
     },
     Hanukkah: {
       icon: "menorah",
-      src:
-        "https://media.istockphoto.com/photos/happy-hanukkah-picture-id864602150",
+      src: "assets/images/hanukkah.jpg",
       color: "",
     },
   };
@@ -73,7 +70,7 @@ const CardExample = ({ card, onClick }) => {
               src={
                 Occasions[card.occasion] ? Occasions[card.occasion].src : "tree"
               }
-              alt="food"
+              alt="heart"
             />
           </MDBView>
 
