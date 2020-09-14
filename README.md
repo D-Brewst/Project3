@@ -13,7 +13,7 @@
 ---
 
 ## <a name="Description"></a>Description:
-To automate the card writing process for Christmas, Hanukkah, Halloween, and birthdays; streamline communication between two parties with the click of a button.
+We created an app that generates a card writing process for Christmas, Hanukkah, Halloween, and birthdays; streamline communication between two parties with the click of a button.
 
 ---
 
