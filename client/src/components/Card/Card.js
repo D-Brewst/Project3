@@ -51,9 +51,15 @@ const CardExample = ({ card, onClick }) => {
     setState(evt.target.value);
   };
 
+  const options = {
+    orientation: 'portrait',
+    unit: 'in',
+    format: [400,215]
+  };
+
   return (
     <MDBCol md="4">
-      <Pdf targetRef={targetRef} filename="card.pdf">
+      <Pdf targetRef={targetRef} filename="card.pdf" options={options}>
         {({ toPdf }) => (
           <MDBBtn className="unique" onClick={toPdf}>
             Download
