@@ -12,6 +12,7 @@ import {
 } from "mdbreact";
 import ContentEditable from "react-contenteditable";
 import Pdf from "react-to-pdf";
+import "./card.css";
 
 const CardExample = ({ card, onClick }) => {
   const Occasions = {
