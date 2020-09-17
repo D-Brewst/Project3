@@ -15,4 +15,18 @@ export default {
       console.log(error.message);
     }
   },
+  getLinkToken: async () => {
+    try {
+      const res = await axios("/api/create_link_token", {
+        headers: {
+          Authorization: "Bearer " + token(),
+        },
+      });
+      console.log(res);
+      return res.data;
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
 };
+
