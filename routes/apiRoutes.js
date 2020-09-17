@@ -13,8 +13,8 @@ Router.post('/create_link_token', function(request, response, next) {
         'client_user_id': 'user-id',
       },
       'client_name': "Plaid Quickstart",
-      'products': PLAID_PRODUCTS,
-      'country_codes': PLAID_COUNTRY_CODES,
+      'products': process.env.PLAID_PRODUCTS,
+      'country_codes': process.env.PLAID_COUNTRY_CODES,
       'language': "en",
     }
   
@@ -30,6 +30,7 @@ Router.post('/create_link_token', function(request, response, next) {
           });
         }
         response.json(createTokenResponse);
+        console.log(createTokenResponse);
     })
   });
 

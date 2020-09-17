@@ -2,7 +2,7 @@ import React from 'react';
 import API from "../../utils/API";
 import { PlaidLink } from 'react-plaid-link';
 
-const Link = props => {
+const Link = async props => {
   const onExit = (error, metadata) => console.log('onExit', error, metadata);
   const onEvent = (eventName, metadata) =>
     console.log('onEvent', eventName, metadata);
@@ -25,7 +25,7 @@ const Link = props => {
       <PlaidLink
         className="CustomButton"
         style={{ padding: '20px', fontSize: '16px', cursor: 'pointer' }}
-        token={state.linkToken}
+        token= {state.linkToken}
         onExit={onExit}
         onSuccess={onSuccess}
         onEvent={onEvent}
