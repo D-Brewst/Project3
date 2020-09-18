@@ -69,7 +69,7 @@ function App() {
               </MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
-              <MDBNavLink className="black-text" to="/moneygift">
+              <MDBNavLink className="black-text" to="/payment">
                 <span>Send Money</span>
               </MDBNavLink>
             </MDBNavItem>
@@ -94,7 +94,7 @@ function App() {
             <Route exact path="/members" component={Members} />
             <Route exact path="/sample" component={Sample} />
             <Route exact path="/about" component={About} />
-            <Route exact path="/moneygift" component={Payment} />
+            <Route exact path="/payment" component={Payment} />
           </Switch>
         </Router>
       ) : (

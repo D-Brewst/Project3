@@ -27,4 +27,30 @@ Router.post("/login", function (req, res) {
 
 Router.post("/register", userController.createNew);
 
+Router.post('/create_link_token', async function(request, response, next) {
+  // 1. Grab the client_user_id by searching for the current user in your database
+  const authUser = JSON.parse(localStorage.getItem('authuser'));
+  console.log(authUser);
+  const user = await User.find();
+  const clientUserId = user.id;
+  console.log(user);
+  // 2. Create a link_token for the given user
+  plaidClient.createLinkToken({
+    user: {
+      client_user_id: clientUserId,
+    },
+    client_name: 'My App',
+    products: ['transactions'],
+    country_codes: ['US'],
+    language: 'en',
+    webhook: 'https://sample.webhook.com',
+  }, (err, res) => {
+    const link_token = res.link_token;
+
+    // 3. Send the data to the client
+    response.json({ link_token });
+  });
+});
+
+
 module.exports = Router;

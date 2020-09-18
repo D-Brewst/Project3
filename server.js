@@ -19,6 +19,7 @@ const plaidClient = new plaid.Client({
 });
 
 console.log(plaidClient);
+
 // Configure body parsing for AJAX requests
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
