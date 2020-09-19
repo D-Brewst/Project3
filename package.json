@@ -23,6 +23,7 @@
     "express": "^4.17.1",
     "mongoose": "^5.10.3",
     "mongoose-data-seed": "^2.1.6",
+    "node-localstorage": "^2.1.6",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
