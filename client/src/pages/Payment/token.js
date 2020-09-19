@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import API from "../../utils/API.js";
 import Link from "./index";
 
-function linkToken() {
+function LinkToken() {
     const [state, setState] = useState("");
 
     const getLinkToken = async () => {
@@ -15,12 +15,13 @@ function linkToken() {
         setState((state) => state = getLinkToken());
     },[state])
 
+    console.log(state);
 
     return (
         <div>
-        <Link token={state}/>
+        <Link linktoken={state}/>
         </div>
     )
 }
 
-export default linkToken;
+export default LinkToken;
