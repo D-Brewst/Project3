@@ -76,15 +76,15 @@ import { usePlaidLink } from 'react-plaid-link';
 import linkToken from "./token.js";
 import API from "../../utils/API.js";
 
-const Link = () => {
+const Link = (props) => {
   const onSuccess = useCallback((token, metadata) => {
     // send token to server
   }, []);
-
-  const linktoken = "link-sandbox-d780af6e-8971-497a-acd3-0698a99f0b89"
+ 
+  console.log(props.token)
 
   const config = {
-    token: linktoken,
+    token: props.token,
     onSuccess,
     // ...
   };

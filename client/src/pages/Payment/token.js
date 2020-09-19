@@ -1,23 +1,26 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import API from "../../utils/API.js";
 import Link from "./index";
 
-function linkToken (){
-    // const [state, setState] = useState("");
-    // React.useEffect(() => {
-    //     API.getLinkToken().then((res) => {
-    //       setState((state) => ({
-    //         return
-    //       }));
-    //     });
-    //   }, [state]);
+function linkToken() {
+    const [state, setState] = useState("");
 
-    //   console.log(state);
-    // return (
-    //     <div>
-    //     await API.getLinkToken(); {token()}
-    //     </div>
-    // )
+    const getLinkToken = async () => {
+        const response = await fetch('/create_link_token', { method: 'POST' });
+        const responseJSON = await response.json();
+        return responseJSON.link_token;
+      }
+
+    useEffect(() => {
+        setState((state) => state = getLinkToken());
+    },[state])
+
+
+    return (
+        <div>
+        <Link token={state}/>
+        </div>
+    )
 }
 
 export default linkToken;
