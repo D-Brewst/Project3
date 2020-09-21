@@ -6,9 +6,10 @@ import {
   Redirect,
 } from "react-router-dom";
 import About from "./pages/About/index";
-import Payment from "./pages/Payment/index"
+import Link from "./pages/Payment/index"
 import Home from "./pages/Home/index";
 import Login from "./pages/Login/index";
+import linkToken from "./pages/Payment/token.js"
 import Members from "./pages/Members/index";
 import Sample from "./pages/Sample/index";
 import Signup from "./pages/Signup/index";
@@ -69,7 +70,7 @@ function App() {
               </MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
-              <MDBNavLink className="black-text" to="/moneygift">
+              <MDBNavLink className="black-text" to="/payment">
                 <span>Send Money</span>
               </MDBNavLink>
             </MDBNavItem>
@@ -94,7 +95,7 @@ function App() {
             <Route exact path="/members" component={Members} />
             <Route exact path="/sample" component={Sample} />
             <Route exact path="/about" component={About} />
-            <Route exact path="/moneygift" component={Payment} />
+            <Route exact path="/payment" component={Link} />
           </Switch>
         </Router>
       ) : (

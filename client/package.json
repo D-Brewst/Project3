@@ -2,7 +2,8 @@
   "name": "project3",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:4000",
+  "proxy": "http://localhost:4000/",
+  "secure": false,
   "dependencies": {
     "cra-template": "1.0.3",
     "mdbreact": "^4.27.0",
@@ -13,7 +14,8 @@
     "react-plaid-link": "^3.0.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
-    "react-to-pdf": "0.0.13"
+    "react-to-pdf": "0.0.13",
+    "typescript": "^4.0.3"
   },
   "scripts": {
     "start": "react-scripts start",
