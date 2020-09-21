@@ -16,17 +16,9 @@ export default {
     }
   },
   getLinkToken: async () => {
-    try {
-      const res = await axios("/api/create_link_token", {
-        headers: {
-          Authorization: "Bearer " + token(),
-        },
-      });
-      console.log(res);
-      return res.data;
-    } catch (error) {
-      console.log(error.message);
-    }
+    const response = await fetch('/auth/create_link_token', { method: 'POST' });
+    const responseJSON = await response.json();
+    return responseJSON.link_token;
   }
 };
 

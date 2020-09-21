@@ -13,7 +13,8 @@
     "react-plaid-link": "^3.0.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
-    "react-to-pdf": "0.0.13"
+    "react-to-pdf": "0.0.13",
+    "typescript": "^4.0.3"
   },
   "scripts": {
     "start": "react-scripts start",
