@@ -8,18 +8,19 @@ function LinkToken() {
     const getLinkToken = async () => {
         const response = await fetch('/create_link_token', { method: 'POST' });
         const responseJSON = await response.json();
+        setState((state) => state = responseJSON.link_token);
         return responseJSON.link_token;
       }
 
     useEffect(() => {
-        setState((state) => state = getLinkToken());
-    },[state])
+        getLinkToken();
+    },[])
 
     console.log(state);
 
     return (
         <div>
-        <Link linktoken={state}/>
+            <Link linktoken={state} name={20}/>
         </div>
     )
 }

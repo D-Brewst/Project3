@@ -2,6 +2,7 @@ const express = require("express");
 const plaid = require("plaid");
 const db = require("./models");
 const app = express();
+const session = require("express-session");
 const dotenv = require("dotenv");
 const PORT = process.env.PORT || 4000;
 const passport = require("passport");
@@ -12,6 +13,9 @@ console.log("Client:", process.env.PLAID_CLIENT_ID);
 console.log("Secret:", process.env.PLAID_SECRET_SANDBOX);
 
 // Configure body parsing for AJAX requests
+app.use(session({ secret: 'anything' }));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 if (process.env.NODE_ENV === "production") {
@@ -43,6 +47,7 @@ app.use(routes);
 // Create a link_token to initialize Link
 app.post('/create_link_token', async function(request, response, next) {
   // Grab the client_user_id by searching for the current user in your database
+  console.log(request.user);
   const user = await db.User.find({"email": "hebrewhammer@gmail.com"});
   console.log(user[0]);
   const clientUserId = user[0]._id;
@@ -53,8 +58,8 @@ app.post('/create_link_token', async function(request, response, next) {
     user: {
       client_user_id: clientUserId,
     },
-    client_name: 'My App',
-    products: ['transactions'],
+    client_name: 'WyldCard',
+    products: ['auth'],
     country_codes: ['US'],
     language: 'en',
     webhook: 'https://sample.webhook.com',
@@ -82,6 +87,20 @@ app.post('/get_access_token', function(request, response, next) {
     response.json({'error': false});
   });
 });
+
+// Exchange the public_token from Plaid Link for an access token.
+// plaidClient.exchangePublicToken(public_token, function(err, res) {
+//   const accessToken = res.access_token;
+//   // Create a processor token for a specific account id.
+//   plaidClient.createProcessorToken(
+//     accessToken,
+//     accountId,
+//     'dwolla',
+//     function(err, res) {
+//       const processorToken = res.processor_token;
+//     }
+//   );
+// });
 
 app.listen(PORT, () => {
   console.log(`Your server is running on http://localhost:${PORT}`);

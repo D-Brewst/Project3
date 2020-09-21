@@ -76,14 +76,32 @@ import { usePlaidLink } from 'react-plaid-link';
 import linkToken from "./token.js";
 import API from "../../utils/API.js";
 
-const Link = ({linktoken}) => {
-  console.log(linktoken);
-  const onSuccess = useCallback((token, metadata) => {
+const Link = () => {
+  const [state, setState] = useState("");
+
+  const getLinkToken = async () => {
+      const response = await fetch('/create_link_token', { method: 'POST' });
+      const responseJSON = await response.json();
+      setState((state) => state = responseJSON.link_token);
+      return responseJSON.link_token;
+    }
+
+  useEffect(() => {
+      getLinkToken();
+  },[])
+
+  console.log(state);
+
+  const onSuccess = useCallback(async (token, metadata) => {
     // send token to server
+    await fetch('/get_access_token', {
+        method: 'POST',
+        body: JSON.stringify({ public_token: token }),
+      });
   }, []);
 
   const config = {
-    token: linktoken,
+    token: state,
     onSuccess,
     // ...
   };
