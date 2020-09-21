@@ -32,7 +32,8 @@
     "plaid": "^7.1.0",
     "react-contenteditable": "^3.3.5",
     "react-inline-editing": "^1.0.10",
-    "react-to-pdf": "0.0.13"
+    "react-to-pdf": "0.0.13",
+    "ts-toolbelt": "^8.0.6"
   },
   "devDependencies": {
     "concurrently": "^5.3.0",

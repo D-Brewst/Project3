@@ -46,6 +46,7 @@ mongoose.connect(process.env.MONGO_URI || "mongodb://localhost/card", {
 });
 
 const routes = require("./routes");
+const { I } = require("ts-toolbelt");
 app.use(routes);
 
 app.post('/create_link_token', async function(request, response, next) {
@@ -73,14 +74,30 @@ app.post('/create_link_token', async function(request, response, next) {
   });
 });
 
+// app.post('/get_access_token', async (request, response) => {
+//   try {
+//     const PUBLIC_TOKEN = request.body.public_token;
+//     // Exchange the client-side public_token for a server access_token
+//     const tokenResponse = await client.exchangePublicToken(PUBLIC_TOKEN);
+//     // Save the access_token and item_id to a persistent database
+//     const ACCESS_TOKEN = tokenResponse.access_token;
+//     const ITEM_ID = tokenResponse.item_id;
+//   } catch (e) {
+//     // Display error on client
+//     return response.send({ error: e.message });
+//   }
+//   console.log(ACCESS_TOKEN);
+//   console.log(tokenResponse);
+//   console.log(ITEM_ID);
+// });
+
 // Accept the public_token sent from Link
-app.post('/get_access_token', function(request, response, next) {
-  console.log(request);
+app.post('/item/public_token/exchange', async function(request, response, next) {
+  console.log("req body:", request.body);
   const public_token = request.body.public_token;
   const accountId = request.body.accountId;
   console.log("account-id", accountId);
-  
-  plaidClient.exchangePublicToken(public_token, function(error, response) {
+  await plaidClient.exchangePublicToken(public_token, function(error, response) {
     if (error != null) {
       console.log('Could not exchange public_token!' + '\n' + error);
       return response.json({error: msg});
@@ -92,16 +109,12 @@ app.post('/get_access_token', function(request, response, next) {
 
     console.log('Access Token: ' + ACCESS_TOKEN);
     console.log('Item ID: ' + ITEM_ID);
-    response.json({'error': false});
-  });
-    plaidClient.exchangePublicToken(public_token, function(err, res) {
-    const accessToken = res.access_token;
-    // Create a processor token for a specific account id.
     plaidClient.createProcessorToken(
-      accessToken,
+      ACCESS_TOKEN,
       accountId,
       'dwolla',
       function(err, res) {
+        console.log(res);
         const processorToken = res.processor_token;
       }
     );
