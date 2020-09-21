@@ -16,7 +16,7 @@ export default {
     }
   },
   getLinkToken: async () => {
-    const response = await fetch('/create_link_token', { method: 'POST' });
+    const response = await fetch('/auth/create_link_token', { method: 'POST' });
     const responseJSON = await response.json();
     return responseJSON.link_token;
   }
