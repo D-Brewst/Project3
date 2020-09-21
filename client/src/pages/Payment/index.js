@@ -3,6 +3,7 @@ import { usePlaidLink } from 'react-plaid-link';
 import linkToken from "./token.js";
 import API from "../../utils/API.js";
 import axios from "axios";
+import { MDBBtn } from "mdbreact";
 
 const Link = () => {
   const [state, setState] = useState("");
@@ -43,6 +44,7 @@ const Link = () => {
     // send token to server
     await axios.post('/get_access_token', {
         public_token: token,
+        accountId: metadata.account_id,
       });
   }, []);
 
@@ -55,9 +57,9 @@ const Link = () => {
   const { open, ready, error } = usePlaidLink(config);
 
   return (
-    <button onClick={() => open()} disabled={!ready}>
+    <MDBBtn onClick={() => open()} disabled={!ready}>
       Connect a bank account
-    </button>
+    </MDBBtn>
   );
 };
 export default Link;

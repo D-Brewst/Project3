@@ -77,6 +77,9 @@ app.post('/create_link_token', async function(request, response, next) {
 app.post('/get_access_token', function(request, response, next) {
   console.log(request);
   const public_token = request.body.public_token;
+  const accountId = request.body.accountId;
+  console.log("account-id", accountId);
+  
   plaidClient.exchangePublicToken(public_token, function(error, response) {
     if (error != null) {
       console.log('Could not exchange public_token!' + '\n' + error);
