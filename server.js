@@ -1,7 +1,24 @@
 const express = require("express");
+const plaid = require("plaid");
 const app = express();
+const dotenv = require("dotenv");
 const PORT = process.env.PORT || 4000;
 
+dotenv.config();
+
+console.log("Client:", process.env.PLAID_CLIENT_ID);
+console.log("Secret:", process.env.PLAID_SECRET_SANDBOX);
+
+const plaidClient = new plaid.Client({
+  clientID: process.env.PLAID_CLIENT_ID,
+  secret: process.env.PLAID_SECRET_SANDBOX,
+  env: plaid.environments.sandbox,
+  options: {
+    version: '2019-05-29', // '2019-05-29' | '2018-05-22' | '2017-03-08'
+  },
+});
+
+console.log(plaidClient);
 // Configure body parsing for AJAX requests
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

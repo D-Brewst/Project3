@@ -8,13 +8,13 @@
       "type": "image/x-icon"
     },
     {
-      "src": "vector-wyld.png",
-      "type": "image/png",
+      "src": "vector-wyld.ico",
+      "type": "image/x-icon",
       "sizes": "192x192"
     },
     {
-      "src": "vector-wyld.png",
-      "type": "image/png",
+      "src": "vector-wyld.ico",
+      "type": "image/x-icon",
       "sizes": "512x512"
     }
   ],

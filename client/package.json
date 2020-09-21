@@ -6,9 +6,11 @@
   "dependencies": {
     "cra-template": "1.0.3",
     "mdbreact": "^4.27.0",
+    "plaid": "^7.1.0",
     "react": "^16.13.1",
     "react-contenteditable": "^3.3.5",
     "react-dom": "^16.13.1",
+    "react-plaid-link": "^3.0.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "react-to-pdf": "0.0.13"
