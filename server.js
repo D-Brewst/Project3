@@ -7,6 +7,8 @@ const dotenv = require("dotenv");
 const PORT = process.env.PORT || 4000;
 const passport = require("./authentication/passport.js");
 const bodyParser = require("body-parser");
+const dwolla = require("dwolla-v2");
+var dwollaClient = require("dwolla-v2").Client;
 
 dotenv.config();
 
@@ -35,7 +37,30 @@ const plaidClient = new plaid.Client({
   },
 });
 
+const client = new dwollaClient({
+  key: process.env.appKey,
+  secret: process.env.appSecret,
+  environment: 'sandbox' // optional - defaults to production
+});
+
 console.log(plaidClient);
+
+var requestBody = {
+  firstName: "Jane",
+  lastName: "Doe",
+  email: "janedoe@nomail.net",
+  type: "personal",
+  address1: "99-99 33rd St",
+  city: "Some City",
+  state: "NY",
+  postalCode: "11101",
+  dateOfBirth: "1970-05-01",
+  // For the first attempt, only the
+  // last 4 digits of SSN required
+  // If the entire SSN is provided,
+  // it will still be accepted
+  ssn: "4321",
+};
 
 // Connect to the Mongo DB
 const mongoose = require("mongoose");
@@ -74,23 +99,6 @@ app.post('/create_link_token', async function(request, response, next) {
   });
 });
 
-// app.post('/get_access_token', async (request, response) => {
-//   try {
-//     const PUBLIC_TOKEN = request.body.public_token;
-//     // Exchange the client-side public_token for a server access_token
-//     const tokenResponse = await client.exchangePublicToken(PUBLIC_TOKEN);
-//     // Save the access_token and item_id to a persistent database
-//     const ACCESS_TOKEN = tokenResponse.access_token;
-//     const ITEM_ID = tokenResponse.item_id;
-//   } catch (e) {
-//     // Display error on client
-//     return response.send({ error: e.message });
-//   }
-//   console.log(ACCESS_TOKEN);
-//   console.log(tokenResponse);
-//   console.log(ITEM_ID);
-// });
-
 // Accept the public_token sent from Link
 app.post('/item/public_token/exchange', async function(request, response, next) {
   console.log("req body:", request.body);
@@ -116,24 +124,22 @@ app.post('/item/public_token/exchange', async function(request, response, next) 
       function(err, res) {
         console.log(res);
         const processorToken = res.processor_token;
+        client.post("customers", requestBody).then((res) => res.headers.get("location"));
+        const customerUrl ='https://api-sandbox.dwolla.com/customers/9bb03d15-ad0a-470f-b853-ee6e5431b580';
+        client.get("https://api-sandbox.dwolla.com/customers/9bb03d15-ad0a-470f-b853-ee6e5431b580").then(res => console.log(res.body));
+        var fundBody = {
+          plaidToken: `${processorToken}`,
+          name: "Jane Doe’s Savings",
+        };
+        client.post(`${customerUrl}/funding-sources`, fundBody).then((res) => res.headers.get("location")); // => 'https://api-sandbox.dwolla.com/funding-sources/375c6781-2a17-476c-84f7-db7d2f6ffb31'
       }
-    );
+    );  
   });
 });
 
-// Exchange the public_token from Plaid Link for an access token.
-// plaidClient.exchangePublicToken(public_token, function(err, res) {
-//   const accessToken = res.access_token;
-//   // Create a processor token for a specific account id.
-//   plaidClient.createProcessorToken(
-//     accessToken,
-//     accountId,
-//     'dwolla',
-//     function(err, res) {
-//       const processorToken = res.processor_token;
-//     }
-//   );
-// });
+ // => 'https://api-sandbox.dwolla.com/customers/FC451A7A-AE30-4404-AB95-E3553FCD733F'
+// "https://api-sandbox.dwolla.com/customers/AB443D36-3757-44C1-A1B4-29727FB3111C"
+// processor-sandbox-7de194a4-81dd-4d7c-82f4-6d81eb5bb31c
 
 app.listen(PORT, () => {
   console.log(`Your server is running on http://localhost:${PORT}`);
