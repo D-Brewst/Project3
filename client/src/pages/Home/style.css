@@ -4,3 +4,19 @@
   line-height: 1.2;
   font-family: "Lato", sans-serif;
 }
+
+.fa-gift {
+  color: green
+}
+
+.fa-heart {
+  color: red
+}
+
+.fa-birthday-cake {
+  color: orange;
+}
+
+.fa-menorah {
+  color: blue;
+}
