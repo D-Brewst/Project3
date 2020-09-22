@@ -39,12 +39,12 @@ const Link = () => {
     axGet();
   }, []);
 
-  const onSuccess = useCallback(async (token, metadata) => {
+  const onSuccess = useCallback(async(token, metadata) => {
     // send token to server
-    await axios.post("/get_access_token", {
-      public_token: token,
-      accountId: metadata.account_id,
-    });
+    await axios.post('/item/public_token/exchange', {
+        public_token: token,
+        accountId: metadata.account_id,
+      });
   }, []);
 
   const config = {
