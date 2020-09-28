@@ -71,7 +71,6 @@ mongoose.connect(process.env.MONGO_URI || "mongodb://localhost/card", {
 });
 
 const routes = require("./routes");
-const { I } = require("ts-toolbelt");
 app.use(routes);
 
 app.post('/create_link_token', async function(request, response, next) {

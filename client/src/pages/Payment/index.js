@@ -5,6 +5,7 @@ import API from "../../utils/API.js";
 import axios from "axios";
 import { MDBBtn } from "mdbreact";
 import "./payment.css";
+import Modal from "../../components/Modal/index.js";
 
 const Link = () => {
   const [state, setState] = useState("");
@@ -64,6 +65,9 @@ const Link = () => {
         a personalized card. No need to jump through hoops in order to attach
         the gift of money with a card. The button below will prompt your bank
         login.
+      </p>
+      <p id="btn">
+        <Modal/>
       </p>
       <p id="btn">
         <MDBBtn onClick={() => open()} disabled={!ready}>

@@ -18,6 +18,7 @@ import "./style.css";
 
 import starlogo from "../../images/color-logo.svg";
 import samplecard from "../../images/cardenv_1.svg";
+import newcard from "../../images/newcard.png";
 
 function Home() {
   const history = useHistory();
@@ -54,7 +55,7 @@ function Home() {
               </i>
               <br /> <br />
               <p className="lead">
-                <MDBBtn color="black" onClick={redirect}>Sign Up</MDBBtn>
+                <MDBBtn onClick={redirect}>Sign Up</MDBBtn>
               </p>
             </div>
           </MDBCol>
@@ -66,7 +67,7 @@ function Home() {
             <img
               width="auto"
               className="justify-content-center"
-              src={samplecard}
+              src={newcard}
               alt=""
             />
           </MDBCol>
