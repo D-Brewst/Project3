@@ -21,8 +21,11 @@ const customerSchema = new Schema({
     match: [/.+@.+\..+/, "Please enter a valid e-mail address"],
   },
 
-  type: personal,
-
+  type: {
+    value: "personal",
+    type: String,
+  },
+  
   address1: {
     type: String,
     required: "This field is required",

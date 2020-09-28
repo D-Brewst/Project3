@@ -66,9 +66,7 @@ const Link = () => {
         the gift of money with a card. The button below will prompt your bank
         login.
       </p>
-      <p id="btn">
-        <Modal/>
-      </p>
+      <Modal id="btn"/>
       <p id="btn">
         <MDBBtn onClick={() => open()} disabled={!ready}>
           Connect a bank account

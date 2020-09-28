@@ -1,6 +1,4 @@
 const db = require("../models");
-const jwt = require('jsonwebtoken');
-const passport = require("passport");
 
 module.exports = {
   createNew: async (req, res) => {
