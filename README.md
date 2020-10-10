@@ -47,7 +47,7 @@ As a gift giver I feel at a loss for words when it comes to filling out a card, 
 
 ## <a name="License"></a>License:
 
-**MIT License Copyright (c) 2020 Joshua Wilensky**
+**MIT License Copyright (c) 2020**
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
