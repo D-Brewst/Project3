@@ -2,8 +2,8 @@ import React from "react";
 import API from "../../utils/API";
 import Card from "../../components/Card/Card";
 import CardButton from "../../components/CardButton";
+import Modal from "../../components/Modal/index.js"
 import { MDBRow, MDBCol, MDBBtn } from "mdbreact";
-import { useHistory } from "react-router-dom";
 
 /**
  *
@@ -14,8 +14,6 @@ import { useHistory } from "react-router-dom";
 const randArrayEl = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
 function Members() {
-  const history = useHistory();
-  const redirect = () => history.push("/payment");
   const [state, setState] = React.useState({
     messages: [],
     selected: {},
@@ -118,9 +116,7 @@ function Members() {
         
         <MDBRow className="justify-content-center">
             <MDBCol className="col-auto">
-                <MDBBtn onClick={redirect}>
-                  Send Money
-                </MDBBtn>
+              <Modal id="btn"/>
             </MDBCol>
         </MDBRow>
         

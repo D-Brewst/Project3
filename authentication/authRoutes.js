@@ -6,6 +6,7 @@ const JWTStrategy = passportJWT.Strategy;
 const ExtractJWT = passportJWT.ExtractJwt;
 const db = require("../models");
 const userController = require("../controllers/userController");
+const customerController = require("../controllers/customerController")
 const plaid = require("plaid");
 
 /* POST login. */
@@ -31,6 +32,8 @@ Router.post("/login", function (req, res) {
 });
 
 Router.post("/register", userController.createNew);
+
+Router.post("/customer", customerController.newCustomer);
 
 // const plaidClient = new plaid.Client({
 //   clientID: process.env.PLAID_CLIENT_ID,

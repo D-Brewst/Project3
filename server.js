@@ -43,24 +43,9 @@ const client = new dwollaClient({
   environment: 'sandbox' // optional - defaults to production
 });
 
-console.log(plaidClient);
-
-var requestBody = {
-  firstName: "Jane",
-  lastName: "Doe",
-  email: "janedoe@nomail.net",
-  type: "personal",
-  address1: "99-99 33rd St",
-  city: "Some City",
-  state: "NY",
-  postalCode: "11101",
-  dateOfBirth: "1970-05-01",
-  // For the first attempt, only the
-  // last 4 digits of SSN required
-  // If the entire SSN is provided,
-  // it will still be accepted
-  ssn: "4321",
-};
+app.get('/api/customer', async function(req, res){
+  console.log(req.data);
+})
 
 // Connect to the Mongo DB
 const mongoose = require("mongoose");
@@ -75,7 +60,6 @@ app.use(routes);
 
 app.post('/create_link_token', async function(request, response, next) {
   // 1. Grab the client_user_id by searching for the current user in your database
-  console.log(request);
   const userEmail = request.body.email;
   const user = await db.User.find({"email" : userEmail})
   console.log("user:", user);
@@ -100,7 +84,6 @@ app.post('/create_link_token', async function(request, response, next) {
 
 // Accept the public_token sent from Link
 app.post('/item/public_token/exchange', async function(request, response, next) {
-  console.log("req body:", request.body);
   const public_token = request.body.public_token;
   const accountId = request.body.accountId;
   console.log("account-id", accountId);
@@ -121,7 +104,6 @@ app.post('/item/public_token/exchange', async function(request, response, next) 
       accountId,
       'dwolla',
       function(err, res) {
-        console.log(res);
         const processorToken = res.processor_token;
         client.post("customers", requestBody).then((res) => res.headers.get("location"));
         const customerUrl ='https://api-sandbox.dwolla.com/customers/9bb03d15-ad0a-470f-b853-ee6e5431b580';
