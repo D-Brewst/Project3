@@ -1,28 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,700;1,400&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <!--
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <!-- <link rel="manifest" href="%PUBLIC_URL%/manifest.json" /> -->
-    <link rel=”shortcut icon” href=”%PUBLIC_URL%/favicon.ico”>
+  <!-- <link rel="manifest" href="%PUBLIC_URL%/manifest.json" /> -->
+  <link rel=”shortcut icon” href=”%PUBLIC_URL%/favicon.ico”>
 
-    <!--
+  <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
@@ -31,17 +26,18 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="manifest.json" />
 
-    <title>WYLD CARD</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
+  <title>WYLD CARD</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
 
@@ -52,15 +48,84 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
 
-    <script>
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-          navigator.serviceWorker
-            .register("../src/serviceWorker.js")
-            .then((reg) => console.log("Success:", reg.scope))
-            .catch((err) => console.log("Failure:", err));
+  <!-- <script>
+      // if ("serviceWorker" in navigator) {
+      //   window.addEventListener("load", () => {
+      //     navigator.serviceWorker
+      //       .register("../src/serviceWorker.js")
+      //       .then((reg) => console.log("Success:", reg.scope))
+      //       .catch((err) => console.log("Failure:", err));
+      //   });
+      // }
+     </script> -->
+  <!-- <button id="link-button">Link Account</button> -->
+  <!-- <script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script> -->
+  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+  <script type="text/javascript">
+  (async function($) {
+    const fetchLinkToken = async () => {
+      const response = await fetch('/create_link_token', { method: 'POST' });
+      const responseJSON = await response.json();
+      return responseJSON.link_token;
+    };
+
+    const configs = {
+      // Required, fetch a link token from your server and pass it
+      // back to your app to initialize Link.
+      token: await fetchLinkToken(),
+      onLoad: function() {
+        // Optional, called when Link loads
+      },
+      onSuccess: async function(public_token, metadata) {
+        // Send the public_token to your app server.
+        // The metadata object contains info about the institution the
+        // user selected and the account ID or IDs, if the
+        // Select Account view is enabled.
+        await fetch('/get_access_token', {
+          method: 'POST',
+          body: JSON.stringify({ public_token: public_token }),
         });
+      },
+      onExit: async function(err, metadata) {
+        // The user exited the Link flow.
+        if (err != null) {
+          // The user encountered a Plaid API error prior to exiting.
+          if (err.error_code === 'INVALID_LINK_TOKEN') {
+            // The link_token expired or the user entered too many
+            // invalid credentials. We want to destroy the old iframe
+            // and reinitialize Plaid Link with a new link_token.
+            handler.destroy();
+            handler = Plaid.create({
+              ...configs,
+              token: await fetchLinkToken(),
+            });
+          }
+        }
+        // metadata contains information about the institution
+        // that the user selected and the most recent API request IDs.
+        // Storing this information can be helpful for support.
+      },
+      onEvent: function(eventName, metadata) {
+        // Optionally capture Link flow events, streamed through
+        // this callback as your users connect an Item to Plaid.
+        // For example:
+        // eventName = "TRANSITION_VIEW"
+        // metadata  = {
+        //   link_session_id: "123-abc",
+        //   mfa_type:        "questions",
+        //   timestamp:       "2017-09-14T14:42:19.350Z",
+        //   view_name:       "MFA",
+        // }
       }
-    </script>
-  </body>
+    };
+
+    let handler = Plaid.create(configs);
+
+    $('#link-button').on('click', function(e) {
+      handler.open();
+    });
+  })(jQuery);
+</script> -->
+</body>
+
 </html>

@@ -1,30 +1,17 @@
 import React from "react";
-import {
-  MDBJumbotron,
-  MDBContainer,
-  MDBBtn,
-  MDBCard,
-  MDBCardBody,
-  MDBCardImage,
-  MDBCardTitle,
-  MDBCardText,
-  MDBRow,
-  MDBCol,
-  MDBView,
-  MDBIcon,
-} from "mdbreact";
+import { MDBContainer, MDBBtn, MDBRow, MDBCol } from "mdbreact";
 import { useHistory } from "react-router-dom";
 import "./style.css";
-
 import starlogo from "../../images/color-logo.svg";
 import samplecard from "../../images/cardenv_1.svg";
+import newcard from "../../images/newcard.png";
 
 function Home() {
   const history = useHistory();
   const redirect = () => history.push("/signup");
   return (
     <div>
-      <MDBContainer className="mt-5 justify-content-center">
+      <MDBContainer className="mt-6 justify-content-center">
         <MDBRow className="pt-5">
           <MDBCol className="text-black py-5 px-4 mr-5">
             <div className="justify-content-center text-center">
@@ -39,10 +26,7 @@ function Home() {
                 Never write a card again. Generate a card for any occasion with
                 WYLDCARD.
               </p>
-              <hr className="my-2" />
-              <i className="px-2 fa-lg li-ic">
-                <i className="px-2 fa-lg li-ic" className="fas fa-gift"></i>
-              </i>
+              <hr className="my-4" />
               <i className="px-2 fa-lg li-ic">
                 <i className="fas fa-heart"></i>
               </i>
@@ -50,11 +34,14 @@ function Home() {
                 <i className="fas fa-birthday-cake"></i>
               </i>
               <i className="px-2 fa-lg li-ic">
+                <i className="px-2 fa-lg li-ic" className="fas fa-gift"></i>
+              </i>
+              <i className="px-2 fa-lg li-ic">
                 <i className="fas fa-menorah"></i>{" "}
               </i>
               <br /> <br />
               <p className="lead">
-                <MDBBtn color="black" onClick={redirect}>Sign Up</MDBBtn>
+                <MDBBtn onClick={redirect}>Sign Up</MDBBtn>
               </p>
             </div>
           </MDBCol>
@@ -66,7 +53,7 @@ function Home() {
             <img
               width="auto"
               className="justify-content-center"
-              src={samplecard}
+              src={newcard}
               alt=""
             />
           </MDBCol>
